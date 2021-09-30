@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/nbbaier
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://nbbaier.github.io
+  * I am nbbaier (https://keybase.io/nbbaier) on keybase.
+  * I have a public key with fingerprint CA93 7808 29DC E36D BF5F  8C5E 732F 48A4 F8E1 07C6
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01013c5db73a9e06aa4ebd985173e2c790bf8e253908ab64b5db9ba59f2ec6fc890c0a",
+      "fingerprint": "ca93780829dce36dbf5f8c5e732f48a4f8e107c6",
+      "host": "keybase.io",
+      "key_id": "732f48a4f8e107c6",
+      "kid": "01013c5db73a9e06aa4ebd985173e2c790bf8e253908ab64b5db9ba59f2ec6fc890c0a",
+      "uid": "1435434c435cde5e3a8ed7782f0d2a19",
+      "username": "nbbaier"
+    },
+    "service": {
+      "hostname": "nbbaier.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1632986463,
+  "expire_in": 157680000,
+  "prev": "c66a70f9b755fcdccb79e95e633ca54f5a71ba3baad13c65959e4e446b49c445",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMIlAnicrZJbSBVBGMePpVbGAaOHoMJok8i8tLszs7tzKIoosx56KNKU5DgzO3tc
+tN3Tnj2miF1OKSRdCRKLSE5BlOVDRFhR2YWCLkhGZhEl0QUMioqol7BZq4egx+bl
+Y775ff/5f9/MrfD4UE7G3PDn4tLt5qWMe9ePJENkHY82S9Q1m6RIs1THxwKvN3nC
+j9bZphSRZEVWAEMm1QHBXNYIgZya2ECKDrjKdCxTy+AqAlg2CNUgFSimBGFL5Uyz
+mIFlJhOpSLJsJ8a9uGc7vpBlBAPdkA0Vm4wDzaQWsgyGuA5UCxoECk1F1pkmCmvd
+RFAhzFGS4CW2K3JiEx2z9w/+P/tOjskpECAIIBOBmRxxQAxu6rqhWrKpEgUHYIJ7
+DtnIBe1QSmzuSS1Fkkg22IwHcw0a+Rsoidl+bZL+6inuub7L3HpxXOv78UQkKPeb
+4gG/mdPob6UotR1TzFJUNHAvYbuOFFEEyXw7kFY0oGJDgxooknhj3PZ41A4IpGuG
+LFZwD28IXkDTiC5bmOoIWcxkjOqYY8Q1ABhB0EJEVygBlBBTDFJDGGEOOYQahZhB
+iKSgt02OK0V0YZPEhGTCjjnET3pcarnRtyEzlJETys4aF/yxUM6k3D8/70DjhNGy
+whPhaW6ZMbV/88yl834smtya+/j67jOLOqqOrV3yKU3v7LvWCior/YotK0IvR/Ke
+VIOHr6uezgDl+duO7qv/fPtg7PSpd9am9lTb/odk6HJ7a2b2ivfPp89Lsq2Hj1yc
+fS4Fra7oUHh0YvpN23CosqCfFN/tmONdNa35PR/PpnvXfP+ys93rn1WYpTW5j3f2
+dpELd9fMzMztPP/iWnZ15wKlvCb7yc3ukW/7e6YMgh3pisIULN07/Lbr1UB+X/eV
+k+qHlo6yhX33ZPAqPJBXuvjQgwMDc0h+7/wvlTXyYN7B+ysLHkR2xMfvembvyVq9
+YNhf9Wjw+/rj3all1cu/trkjPwEPuUGS
+=sMV1
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/nbbaier
+
+==================================================================
