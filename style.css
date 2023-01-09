@@ -91,7 +91,7 @@ section {
 html,
 body {
 	background: #FFFFFF;
-	font-family: "iA Writer Duo S", sans-serif;
+	font-family: "Source Sans Pro", sans-serif;
 	color: #222;
 }
 
@@ -140,7 +140,7 @@ blockquote {
 
 #name h2 {
 	font-size: 15px;
-	/* font-family: 'Source Sans Pro', sans-serif; */
+	font-family: 'Source Sans Pro', sans-serif;
 	margin-top: 10px;
 }
 
