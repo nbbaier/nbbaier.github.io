@@ -134,13 +134,13 @@ blockquote {
 
 #name h1 {
 	font-size: 35px;
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	margin-bottom: -6px;
 }
 
 #name h2 {
 	font-size: 15px;
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	margin-top: 10px;
 }
 
@@ -225,28 +225,28 @@ section:last-child {
 }
 
 .sectionTitle h1 {
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	font-size: 20px;
 	font-weight: 400;
 	color: #cf8a05;
 }
 
 .sectionTitle h2 {
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	font-size: 15px;
 	font-weight: 400;
 	color: #cf8a05;
 }
 
 .sectionContent h2 {
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	font-size: 15px;
 	margin-bottom: 6px;
 	line-height: 120%;
 }
 
 .paperContent h2 {
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	font-size: 15px;
 	font-weight: 400;
 	margin-bottom: 6px;
@@ -256,7 +256,7 @@ section:last-child {
 
 .subDetails {
 	font-size: 13px;
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	margin-bottom: 10px;
 }
 
@@ -518,7 +518,7 @@ blockquote.modern {
 }
 
 .nav li {
-	font-family: 'Source Sans Pro', sans-serif;
+	/* font-family: 'Source Sans Pro', sans-serif; */
 	font-size: 1.2em;
 	line-height: 40px;
 	height: 40px;
