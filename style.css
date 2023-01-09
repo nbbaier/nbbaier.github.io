@@ -1,25 +1,110 @@
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video {
-border:0;
-font:inherit;
-font-size:100%;
-margin:0;
-padding:0;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	border: 0;
+	font: inherit;
+	font-size: 100%;
+	margin: 0;
+	padding: 0;
 }
 
-article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
-display:block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
 
-html, body {background: #FFFFFF; font-family: 'Source Sans Pro', sans-serif; color: #222;}
+html,
+body {
+	background: #FFFFFF;
+	font-family: "iA Writer Duo S", sans-serif;
+	color: #222;
+}
 
-.clear {clear: both;}
+.clear {
+	clear: both;
+}
 
 p {
 	font-size: 15px;
 	font-weight: 300;
 	line-height: 20px;
 	margin-bottom: 20px;
-	text-align:justify;
+	text-align: justify;
 	color: #444;
 }
 
@@ -28,7 +113,7 @@ blockquote {
 	font-weight: 300;
 	line-height: 20px;
 	margin-bottom: 20px;
-	text-align:justify;
+	text-align: justify;
 	color: #444;
 	border-left: 2px solid #eee;
 	padding-left: 10px;
@@ -95,7 +180,8 @@ blockquote {
 	color: #444;
 }
 
-#contactDetails ul li a, a[href^=tel] {
+#contactDetails ul li a,
+a[href^=tel] {
 	color: #444;
 	text-decoration: none;
 	-webkit-transition: all .3s ease-in;
@@ -134,7 +220,6 @@ section:last-child {
 
 .paperContent {
 	float: right;
-/* font-weight: 300; */
 	width: 79%;
 	margin-bottom: .5em;
 }
@@ -157,7 +242,7 @@ section:last-child {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 15px;
 	margin-bottom: 6px;
-	 line-height: 120%;
+	line-height: 120%;
 }
 
 .paperContent h2 {
@@ -165,7 +250,7 @@ section:last-child {
 	font-size: 15px;
 	font-weight: 400;
 	margin-bottom: 6px;
-	 line-height: 120%;
+	line-height: 120%;
 }
 
 
@@ -178,9 +263,9 @@ section:last-child {
 
 .keySkills {
 	list-style-type: none;
-	-moz-column-count:3;
-	-webkit-column-count:3;
-	column-count:3;
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
 	margin-bottom: 20px;
 	font-size: 1em;
 	color: #444;
@@ -190,7 +275,7 @@ section:last-child {
 	margin-bottom: 3px;
 }
 
-@media all and (min-width: 602px) and (max-width: 800px) {
+/* @media all and (min-width: 602px) and (max-width: 800px) {
 	#headshot {
 		display: none;
 	}
@@ -425,53 +510,54 @@ blockquote.modern {
 
 
 .nav ul {
-  list-style: none;
-  background-color: #444;
-  text-align: center;
-  padding: 0;
-  margin: 0;
+	list-style: none;
+	background-color: #444;
+	text-align: center;
+	padding: 0;
+	margin: 0;
 }
+
 .nav li {
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 1.2em;
-  line-height: 40px;
-  height: 40px;
-  border-bottom: 1px solid #888;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 1.2em;
+	line-height: 40px;
+	height: 40px;
+	border-bottom: 1px solid #888;
 }
 
 .nav a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  transition: .3s background-color;
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	transition: .3s background-color;
 }
 
 .nav a:hover {
-  background-color: #005f5f;
+	background-color: #005f5f;
 }
 
 .nav a.active {
-  background-color: #fff;
-  color: #444;
-  cursor: default;
+	background-color: #fff;
+	color: #444;
+	cursor: default;
 }
 
 @media screen and (min-width: 600px) {
-  .nav li {
-    width: 120px;
-    border-bottom: none;
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-  }
+	.nav li {
+		width: 120px;
+		border-bottom: none;
+		height: 50px;
+		line-height: 50px;
+		font-size: 1.4em;
+	}
 
-  /* Option 1 - Display Inline */
-  .nav li {
-    display: inline-block;
-    margin-right: -4px;
-  }
+	/* Option 1 - Display Inline */
+	.nav li {
+		display: inline-block;
+		margin-right: -4px;
+	}
 
-  /* Options 2 - Float
+	/* Options 2 - Float
   .nav li {
     float: left;
   }
@@ -485,4 +571,5 @@ blockquote.modern {
   }
   */
 }
- */
+
+*/ */
