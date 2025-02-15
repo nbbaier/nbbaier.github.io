@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Color test</title>
+   </head>
+   <style>
+      /* Variables */
+      :root {
+         --color-primary: #111;
+         --color-bg: #fffffc;
+         --color-border: #898989;
+         --font-primary: "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
+            "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto,
+            noto, "segoe ui", arial, sans-serif;
+         --border-radius: 3px;
+      }
+
+      *,
+      *::before,
+      *::after {
+         box-sizing: border-box;
+      }
+
+      * {
+         margin: 0;
+      }
+
+      /* Body styles */
+      body {
+         margin-inline: auto;
+         max-width: 80ch;
+         padding: 2lh;
+         font-size: 1rem;
+         line-height: 1.4;
+         font-family: var(--font-primary);
+         color: var(--color-primary);
+         background-color: var(--color-bg);
+      }
+
+      .micro > div {
+         margin-bottom: 20px;
+         border: 1px solid #000;
+         border-radius: var(--border-radius);
+         border-color: var(--color-border);
+      }
+
+      .micro > .card > .title {
+         padding: 10px 20px;
+         border-bottom: 1px solid #000;
+         display: flex;
+         justify-content: space-between;
+         border-radius: var(--border-radius) var(--border-radius) 0 0;
+      }
+
+      .micro > .card > .body {
+         background-color: #f9f9f9;
+         padding: 20px;
+         border-radius: 0 0 var(--border-radius) var(--border-radius);
+      }
+   </style>
+   <body>
+      <div class="micro">
+         <div class="card">
+            <div class="title">Card 1</div>
+            <div class="body">
+               Ullamco laboris nisi ut aliquid ex ea commodi consequat.
+            </div>
+         </div>
+         <div class="card">
+            <div class="title">Card 2</div>
+            <div class="body">
+               Ullamco laboris nisi ut aliquid ex ea commodi consequat.
+            </div>
+         </div>
+         <div class="card">
+            <div class="title">Card 3</div>
+            <div class="body">
+               Fictum, deserunt mollit anim laborum astutumque! Quisque placerat
+               facilisis egestas cillum dolore. Nec dubitamus multa iter quae et
+               nos invenerat. Contra legem facit qui id facit quod lex prohibet.
+               Quam diu etiam furor iste tuus nos eludet?
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
