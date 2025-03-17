@@ -1,51 +1,8 @@
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="description" content="Nico Baier's personal website" />
+---
+import Layout from "../layouts/Layout.astro";
+---
 
-      <link href="mailto:nico.baier@gmail.com" rel="me" />
-      <link href="https://github.com/nbbaier" rel="me" />
-      <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
-      <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
-      <link rel="micropub" href="https://micropub.nicobaier.com/" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-         href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-         rel="stylesheet"
-      />
-      <link rel="stylesheet" href="src/styles/style.css" />
-
-      <title>Nico Baier</title>
-
-      <script
-         defer
-         data-site-id="nicobaier.com"
-         src="https://assets.onedollarstats.com/tracker.js"></script>
-
-      <script type="application/ld+json">
-         {
-            "@context": "http://schema.org",
-            "@type": "Person",
-            "email": "mailto:nico.baier@gmail.com",
-            "jobTitle": "Natural Language Analyst",
-            "name": "Nico Baier",
-            "additionalName": "Nicholas Baier",
-            "alumniOf": [
-               "University of Michigan",
-               "University of California, Berkeley"
-            ],
-            "birthPlace": "Ann Arbor, Michigan",
-            "url": "https://nicobaier.com",
-            "sameAs": [
-               "https://linkedin.com/in/nbbaier",
-               "https://github.com/nbbaier/",
-               "https://www.pinterest.com/vicainelli/"
-            ]
-         }
-      </script>
-   </head>
+<Layout>
    <body>
       <header>
          <div class="header-title">
@@ -68,7 +25,7 @@
                   the Univerisity of British Columbia (2019-2020) and a
                   postdoctoral researcher in the Department of Linguistics at
                   McGill University (2017-2019). I have a PhD in linguistics
-                  from University of ”̵̵California, Berkeley. I also have an M.A.
+                  from University of California, Berkeley. I also have an M.A.
                   in Linguistics from Berkeley and a B.A. in Linguistics and
                   German from the University of Michigan. I've also spent some
                   time in the Department of Linguistics at MIT in the Fall of
@@ -375,4 +332,4 @@
          </section>
       </main>
    </body>
-</html>
+</Layout>

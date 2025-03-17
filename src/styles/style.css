@@ -1,8 +1,8 @@
 /* Variables */
 :root {
-   --color-primary: #111;
-   --color-bg: #fffffc;
-   --color-border: #898989;
+   --color-primary: oklch(17.76% 0 0);
+   --color-bg: oklch(98% 0.0039 106.47);
+   --color-border: oklch(55.01% 0 0);
    --font-primary: "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
       "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto,
       "segoe ui", arial, sans-serif;
