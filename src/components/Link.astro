@@ -1,0 +1,29 @@
+---
+import { cn } from "../utils/utils";
+
+export interface Props {
+   to: string;
+   underline?: boolean;
+   title: string;
+   class?: string;
+}
+
+const { to, title, class: className, underline } = Astro.props;
+
+const underlineClass = underline
+   ? "hover:underline-offset-4 underline decoration-primary"
+   : "";
+
+let html = "";
+if (Astro.slots.has("default")) {
+   html = await Astro.slots.render("default");
+}
+---
+
+<a
+   class={cn(className, underlineClass)}
+   title={title}
+   href={to}
+   target="_blank"
+   rel="noopener noreferrer"><Fragment set:html={html} /></a
+>
