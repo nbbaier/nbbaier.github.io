@@ -1,11 +1,9 @@
 /* Variables */
 :root {
-   --color-primary: oklch(17.76% 0 0);
-   --color-bg: oklch(98% 0.0039 106.47);
-   --color-border: oklch(55.01% 0 0);
-   --font-primary: "IBM Plex Sans", -apple-system, BlinkMacSystemFont,
-      "avenir next", avenir, helvetica, "helvetica neue", ubuntu, roboto, noto,
-      "segoe ui", arial, sans-serif;
+   --color-primary: #111;
+   --color-bg: #fffffc;
+   --color-border: #898989;
+   --font-primary: "Work Sans", system-ui, -apple-system, sans-serif;
 }
 
 /* Resets from
@@ -67,10 +65,11 @@ h6 {
 /* Body styles */
 body {
    margin-inline: auto;
-   max-width: 80ch;
+   max-width: 50rem;
    padding: 1.5rem;
    font-size: 1rem;
    font-family: var(--font-primary);
+   font-weight: 400;
    color: var(--color-primary);
    background-color: var(--color-bg);
 }

@@ -2,7 +2,6 @@
 import { AstroFont } from "astro-font";
 import { SEO } from "astro-seo";
 import "./src/styles/style.css";
-import { join } from "node:path";
 
 const siteTitle = "Nico Baier";
 const author = "Nico Baier";
@@ -80,9 +79,9 @@ const websiteSchema = JSON.stringify({
       config={[
          {
             src: [],
-            name: "IMB Plex Sans",
+            name: "Work Sans",
             googleFontsURL:
-               "https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap",
+               "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
             preload: true,
             display: "swap",
             selector: "body",
@@ -94,6 +93,7 @@ const websiteSchema = JSON.stringify({
    <title>Nico Baier</title>
 
    <script
+      is:inline
       defer
       data-site-id="nicobaier.com"
       src="https://assets.onedollarstats.com/tracker.js"></script>
