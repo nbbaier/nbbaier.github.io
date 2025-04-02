@@ -1,17 +1,18 @@
 ---
-import { getEntry, getEntries } from "astro:content";
+import { getEntries, getEntry } from "astro:content";
 import Link from "./Link.astro";
 
 interface Props {
-   id: string;
+	id: string;
 }
 
 const { id } = Astro.props;
 
 const paper = await getEntry("papers", id);
+
 const coauthors = paper?.data.coauthors
-   ? await getEntries(paper?.data.coauthors)
-   : undefined;
+	? await getEntries(paper?.data.coauthors)
+	: undefined;
 ---
 
 {
@@ -22,12 +23,12 @@ const coauthors = paper?.data.coauthors
             {paper.data.date}, {paper.data.publishedIn}
             {paper.data.paperLink.map((link) => {
                return (
-                  
+                  <>
                      <span>|</span>
                      <Link underline to={link.url} title={link.label}>
                         {link.label}
                      </Link>
-                 
+                  </>
                );
             })}
          </div>
