@@ -1,0 +1,58 @@
+---
+import { getEntries, getEntry } from "astro:content";
+import Link from "./Link.astro";
+
+interface Props {
+	id: string;
+}
+
+const { id } = Astro.props;
+
+const paper = await getEntry("papers", id);
+
+const coauthors = paper?.data.coauthors
+	? await getEntries(paper?.data.coauthors)
+	: undefined;
+---
+
+{
+   paper ? (
+      <div class="flex flex-col gap-1 p-2 border rounded">
+         <div class="font-semibold ">{paper.data.title}</div>
+         <div class="flex flex-row gap-1.5 text-sm">
+            {paper.data.date}, {paper.data.publishedIn}
+            {paper.data.paperLink.map((link) => {
+               return (
+                  <>
+                     <span>|</span>
+                     <Link underline to={link.url} title={link.label}>
+                        {link.label}
+                     </Link>
+                  </>
+               );
+            })}
+         </div>
+
+         {coauthors && (
+            <div class="text-sm">
+               with{" "}
+               {coauthors.map((author, index) =>
+                  author.data.url ? (
+                     <Link to={author.data.url} title={author.data.name}>
+                        {author.data.name}
+                        {index < coauthors.length - 1 && ", "}
+                     </Link>
+                  ) : (
+                     <span>
+                        {author.data.name}
+                        {index < coauthors.length - 1 && ", "}
+                     </span>
+                  )
+               )}
+            </div>
+         )}
+      </div>
+   ) : (
+      <div class="font-semibold">{id} not found</div>
+   )
+}
