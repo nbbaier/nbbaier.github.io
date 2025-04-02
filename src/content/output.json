@@ -1,0 +1,130 @@
+{
+	"papers": [
+		{
+			"title": "Mayan Agent Focus and the Ergative Extraction Constraint: Facts and Fictions Revisited",
+			"publishedIn": "Language",
+			"date": "2021",
+			"paperLink": [
+				{
+					"url": "https://muse.jhu.edu/article/794875",
+					"label": "Project MUSE"
+				}
+			],
+			"coauthors": ["Jessica Coon", "Ted Levin"],
+			"id": "Mayan Agent Focus and the Ergative Extraction Constraint: Facts and Fictions Revisited"
+		},
+		{
+			"title": "Antilocality and Antiagreement",
+			"publishedIn": "Linguistic Inquiry 48:2",
+			"date": "2017",
+			"paperLink": [
+				{
+					"url": "https://doi.org/10.1162/LING_a_00246",
+					"label": "LI"
+				},
+				{
+					"url": "http://ling.auf.net/lingbuzz/003275",
+					"label": "lingbuzz"
+				}
+			],
+			"id": "Antilocality and Antiagreement"
+		},
+		{
+			"id": "Morphological Reflexes of Subject Extraction in Caquinte",
+			"title": "Morphological Reflexes of Subject Extraction in Caquinte",
+			"date": "2019",
+			"publishedIn": "Proceedings of WSCLA 23",
+			"paperLink": [
+				{
+					"label": "UBCWPL",
+					"url": "https://lingpapers.sites.olt.ubc.ca/files/2019/07/BaierOHagan_WSCLA23.pdf"
+				},
+				{
+					"label": "lingbuzz",
+					"url": "https://ling.auf.net/lingbuzz/004286"
+				}
+			],
+			"coauthors": ["Zachary O'Hagan"]
+		},
+		{
+			"title": "Anti-agreement with Bound Variables",
+			"publishedIn": "Proceedings of WCCFL 35",
+			"date": "2018",
+			"paperLink": [
+				{
+					"url": "http://ling.auf.net/lingbuzz/003639",
+					"label": "lingbuzz"
+				}
+			],
+			"coauthors": ["Michelle Yuan"],
+			"id": "Anti-agreement with Bound Variables"
+		},
+		{
+			"title": "Spell-out, Chains, and Long Distance Wh-movement in Seereer",
+			"publishedIn": "Berkeley Papers in Formal Linguistics",
+			"date": "2018",
+			"paperLink": [
+				{
+					"url": "https://escholarship.org/uc/item/8rg91081",
+					"label": "BPFL link"
+				}
+			],
+			"id": "Spell-out, Chains, and Long Distance Wh-movement in Seereer"
+		},
+		{
+			"title": "Adjective Agreement in Noon: Evidence for a Split Theory of Noun-Modifier Concord",
+			"publishedIn": "Proceedings of NELS 45",
+			"date": "2015",
+			"paperLink": [
+				{
+					"url": "http://ling.auf.net/lingbuzz/002631",
+					"label": "lingbuzz"
+				}
+			],
+			"id": "Adjective Agreement in Noon: Evidence for a Split Theory of Noun-Modifier Concord"
+		},
+		{
+			"title": "Object Suffixes as Incorporated Pronouns in Seereer",
+			"publishedIn": "Proceedings of ACAL 45",
+			"date": "2018",
+			"paperLink": [
+				{
+					"url": "http://ling.auf.net/lingbuzz/003311",
+					"label": "lingbuzz"
+				}
+			],
+			"id": "Object Suffixes as Incorporated Pronouns in Seereer"
+		},
+		{
+			"title": "A Survey of Anti-Agreement Effects",
+			"publishedIn": "Dissertation Prospectus",
+			"date": "2016",
+			"paperLink": [
+				{
+					"url": "https://nbbaier.github.io/online-papers/baier_prospectus.pdf",
+					"label": "manuscript"
+				}
+			],
+			"id": "A Survey of Anti-Agreement Effects"
+		}
+	],
+	"presentations": [
+		{
+			"title": "The Locus of Variation in types of Ā-Sensitive Agreement",
+			"conference": "Parameters Workshop in Honour of Lisa Travis",
+			"location": "McGill University",
+			"date": "May 17-18, 2019",
+			"paperLink": [
+				{
+					"url": "https://nbbaier.github.io/online-papers/baier_parameters-workshop-handout.pdf",
+					"label": "handout"
+				},
+				{
+					"url": "https://nbbaier.github.io/online-papers/baier_parameters-workshop-poster.pdf",
+					"label": "poster"
+				}
+			],
+			"id": "The Locus of Variation in types of Ā-Sensitive Agreement"
+		}
+	]
+}
