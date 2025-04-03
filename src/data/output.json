@@ -1,0 +1,216 @@
+[
+	{
+		"DOI": "10.1353/lan.2021.0019",
+		"ISSN": "1535-0665",
+		"author": [
+			{ "family": "Coon", "given": "Jessica" },
+			{ "family": "Baier", "given": "Nico" },
+			{ "family": "Levin", "given": "Theodore" }
+		],
+		"container-title": "Language",
+		"id": "Coon:2021",
+		"issue": "2",
+		"issued": { "date-parts": [[2021]] },
+		"page": "269-332",
+		"publisher": "Linguistic Society of America",
+		"title": "Mayan agent focus and the ergative extraction constraint: Facts and fictions revisited",
+		"title-short": "Mayan agent focus and the ergative extraction constraint",
+		"type": "article-journal",
+		"volume": "97"
+	},
+	{
+		"DOI": "10.1162/ling_a_00246",
+		"ISSN": "1530-9150",
+		"author": [{ "family": "Baier", "given": "Nico" }],
+		"container-title": "Linguistic Inquiry",
+		"id": "Baier:2017a",
+		"issue": "2",
+		"issued": { "date-parts": [[2017, 4]] },
+		"page": "367-377",
+		"publisher": "MIT Press",
+		"title": "Antilocality and antiagreement",
+		"type": "article-journal",
+		"volume": "48"
+	},
+	{
+		"author": [
+			{ "family": "Baier", "given": "Nico" },
+			{ "family": "O'Hagan", "given": "Zachary" }
+		],
+		"collection-title": "UBCWPL",
+		"container-title": "Proceedings of the workshop on the structure and constituency of languages of the americas 23",
+		"editor": [
+			{ "family": "Reisinger", "given": "D. K. E." },
+			{ "family": "Yu-Hsiang Lo", "given": "Roger" }
+		],
+		"id": "Baier:2019",
+		"issued": { "date-parts": [[2019]] },
+		"publisher-place": "Vancouver, BC",
+		"title": "Morphological reflexes of subject extraction in caquinte",
+		"type": "paper-conference"
+	},
+	{
+		"author": [
+			{ "family": "Baier", "given": "Nico" },
+			{ "family": "Yuan", "given": "Michelle" }
+		],
+		"container-title": "Proceedings of the 35th West Coast Conference on Formal Linguistics",
+		"editor": [
+			{ "family": "Bennett", "given": "Wm. G." },
+			{ "family": "Hracs", "given": "Lindsay" },
+			{ "family": "Ryan Storoshenko", "given": "Dennis" }
+		],
+		"id": "Baier:2018a",
+		"issued": { "date-parts": [[2018]] },
+		"page": "96-103",
+		"publisher": "Cascadilla Proceedings Project",
+		"publisher-place": "Somerville, MA",
+		"title": "Anti-agreement with bound variables",
+		"type": "paper-conference"
+	},
+	{
+		"author": [
+			{ "family": "Baier", "given": "Nico" },
+			{ "given": "Gloria", "family": "Mellesmoen" }
+		],
+		"container-title": "Proceedings of the 37th West Coast Conference on Formal Linguistics",
+		"editor": [
+			{ "family": "Reisinger", "given": "D. K. E." },
+			{ "family": "Huijsmans", "given": "Marianne" }
+		],
+		"id": "Baier:2021a",
+		"issued": { "date-parts": [[2021]] },
+		"page": "79-88",
+		"publisher": "Cascadilla Proceedings Project",
+		"publisher-place": "Somerville, MA",
+		"title": "Spelling Out Object Agreement in Central Salish",
+		"type": "paper-conference"
+	},
+	{
+		"DOI": "10.5070/bf211038968",
+		"ISSN": "2768-4881",
+		"author": [{ "family": "Baier", "given": "Nico" }],
+		"issue": "1",
+		"container-title": "Berkeley Papers in Formal Linguistics",
+		"id": "Baier:2018b",
+		"issued": { "date-parts": [[2018]] },
+		"publisher": "California Digital Library (CDL)",
+		"title": "Spell-out, chains, and long distance wh-movement in seereer",
+		"type": "chapter",
+		"volume": "1"
+	},
+	{
+		"author": [{ "family": "Baier", "given": "Nico" }],
+		"container-title": "NELS 45: Proceedings of the forty-fifth annual meeting of the north east lingusitic society",
+		"editor": [
+			{ "family": "Bui", "given": "Thuy" },
+			{ "family": "Özyıldız", "given": "Deniz" }
+		],
+		"id": "Baier:2015",
+		"issued": { "date-parts": [[2015]] },
+		"page": "67-80",
+		"publisher": "GLSA",
+		"publisher-place": "Amherst, MA",
+		"title": "Adjective agreement in noon: Evidence for a split theory of noun-modifier concord",
+		"title-short": "Adjective agreement in noon",
+		"type": "paper-conference",
+		"volume": "1"
+	},
+	{
+		"id": "Sande:2019",
+		"type": "chapter",
+		"author": [
+			{ "family": "Sande", "given": "Hannah" },
+			{ "family": "Baier", "given": "Nico" },
+			{ "family": "Jenks", "given": "Peter" }
+		],
+		"container-title": "Theory and description in African Linguistics: Selected papers from the 47th Annual Conference on African Linguistics",
+		"title": "The syntactic diversity of SAuxOV in West Africa",
+		"publisher": "Language Science Press",
+		"publisher-place": "Berlin",
+		"issued": { "date-parts": [[2019]] },
+		"page": "667-701",
+		"editor": [
+			{ "family": "Clem", "given": "Emily" },
+			{ "family": "Jenks", "given": "Peter" },
+			{ "family": "Sande", "given": "Hannah" }
+		]
+	},
+	{
+		"author": [{ "family": "Baier", "given": "Nico" }],
+		"container-title": "African linguistics on the prairie: Selected papers from the 45th annual conference on african linguistics",
+		"editor": [
+			{ "family": "Kandybowicz", "given": "Jason" },
+			{ "family": "Major", "given": "Travis" },
+			{ "family": "T. Duncan", "given": "Philip" }
+		],
+		"id": "Baier:2018c",
+		"issued": { "date-parts": [[2018]] },
+		"page": "253-268",
+		"publisher": "Language Science Press",
+		"title": "Object suffixes as incorporated pronouns in seereer",
+		"type": "chapter"
+	},
+	{
+		"author": [{ "family": "Baier", "given": "Nico" }],
+		"id": "Baier:2016",
+		"issued": { "date-parts": [[2016]] },
+		"note": "Ms., University of California, Berkeley",
+		"title": "A survey of anti-agreement effects",
+		"type": "manuscript"
+	},
+	{
+		"author": [{ "family": "Baier", "given": "Nico" }],
+		"event": "The 91st Annual Meeting of the Linguistic Society of America",
+		"id": "Baier:2017b",
+		"issued": { "date-parts": [[2017]] },
+		"event-date": { "date-parts": [[2017, 1, 5], [2017, 1, 8]] },
+		"publisher-place": "Austin, TX",
+		"title": "A morphological theory of anti-agreement",
+		"type": "speech"
+	},
+	{
+		"id": "Baier:2016",
+		"type": "paper-conference",
+		"issued": { "date-parts": [[2016]] },
+		"title": "Long Distance Wh-Movement in Seereer",
+		"author": [{ "family": "Baier", "given": "Nico" }],
+		"page": "33-38",
+		"editor": [
+			{ "family": "Burkholder", "given": "Ross" },
+			{ "family": "Cisneros", "given": "Carlos" },
+			{ "family": "R. Coppess", "given": "Emily" },
+			{ "family": "Grove", "given": "Julian" },
+			{ "family": "A. Hanink", "given": "Emily" },
+			{ "family": "McMahan", "given": "Hilary" },
+			{ "family": "Meyer", "given": "Cherry" },
+			{ "family": "Pavlou", "given": "Natalia" },
+			{ "family": "Sarıgül", "given": "Özge" },
+			{ "family": "Roth Singerman", "given": "Adam" },
+			{ "family": "Zhang", "given": "Anqi" }
+		],
+		"publisher": "Chicago Linguistic Society",
+		"publisher-place": "Chicago, IL"
+	},
+	{
+		"author": [
+			{ "family": "Hyman", "given": "Larry M." },
+			{ "family": "Rolle", "given": "Nicholas" },
+			{ "family": "Sande", "given": "Hannah" },
+			{ "family": "Clem", "given": "Emily" },
+			{ "family": "Jenks", "given": "Peter" },
+			{ "family": "Lionnet", "given": "Florian" },
+			{ "family": "Merrill", "given": "John" },
+			{ "family": "Baier", "given": "Nico" }
+		],
+		"collection-title": "Cambridge handbooks in language and linguistics",
+		"container-title": "The cambridge handbook of african linguistics",
+		"editor": [{ "family": "Wolff", "given": "H. Ekkehard" }],
+		"id": "Hyman:2019",
+		"issued": { "date-parts": [[2019]] },
+		"page": "191-245",
+		"publisher": "Cambridge University Press",
+		"title": "Niger-congo linguistic features and typology",
+		"type": "chapter"
+	}
+]

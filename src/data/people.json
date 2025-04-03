@@ -1,0 +1,78 @@
+[
+	{ "id": "a-hanink-emily", "family": "A. Hanink", "given": "Emily" },
+	{
+		"id": "baier-nico",
+		"family": "Baier",
+		"given": "Nico",
+		"url": "https://nicobaier.com"
+	},
+	{ "id": "bennett-wm-g.", "family": "Bennett", "given": "Wm. G." },
+	{ "id": "bui-thuy", "family": "Bui", "given": "Thuy" },
+	{ "id": "burkholder-ross", "family": "Burkholder", "given": "Ross" },
+	{ "id": "cisneros-carlos", "family": "Cisneros", "given": "Carlos" },
+	{ "id": "clem-emily", "family": "Clem", "given": "Emily" },
+	{
+		"id": "coon-jessica",
+		"family": "Coon",
+		"given": "Jessica",
+		"url": "http://jessica.lingspace.org/"
+	},
+	{ "id": "grove-julian", "family": "Grove", "given": "Julian" },
+	{ "id": "hracs-lindsay", "family": "Hracs", "given": "Lindsay" },
+	{ "id": "huijsmans-marianne", "family": "Huijsmans", "given": "Marianne" },
+	{ "id": "hyman-larry-m", "family": "Hyman", "given": "Larry M." },
+	{
+		"id": "jenks-peter",
+		"family": "Jenks",
+		"given": "Peter",
+		"url": "https://linguistics.berkeley.edu/~jenks/"
+	},
+	{ "id": "kandybowicz-jason", "family": "Kandybowicz", "given": "Jason" },
+	{ "id": "levin-theodore", "family": "Levin", "given": "Theodore" },
+	{ "id": "lionnet-florian", "family": "Lionnet", "given": "Florian" },
+	{ "id": "major-travis", "family": "Major", "given": "Travis" },
+	{ "id": "mcmahan-hilary", "family": "McMahan", "given": "Hilary" },
+	{
+		"id": "mellesmoen-gloria",
+		"family": "Mellesmoen",
+		"given": "Gloria",
+		"url": "https://www.mellesmoen.ca/"
+	},
+	{ "id": "merrill-john", "family": "Merrill", "given": "John" },
+	{ "id": "meyer-cherry", "family": "Meyer", "given": "Cherry" },
+	{
+		"id": "o'hagan-zachary",
+		"family": "O'Hagan",
+		"given": "Zachary",
+		"url": "http://linguistics.berkeley.edu/~zjohagan/"
+	},
+	{ "id": "özyıldız-deniz", "family": "Özyıldız", "given": "Deniz" },
+	{ "id": "özyıldız-deniz", "family": "Özyıldız", "given": "Deniz" },
+	{ "id": "pavlou-natalia", "family": "Pavlou", "given": "Natalia" },
+	{ "id": "r-coppess-emily", "family": "R. Coppess", "given": "Emily" },
+	{ "id": "reisinger-d-k. e.", "family": "Reisinger", "given": "D. K. E." },
+	{ "id": "rolle-nicholas", "family": "Rolle", "given": "Nicholas" },
+	{ "id": "roth-singerman-adam", "family": "Roth Singerman", "given": "Adam" },
+	{
+		"id": "ryan-storoshenko-dennis",
+		"family": "Ryan Storoshenko",
+		"given": "Dennis"
+	},
+	{
+		"id": "sande-hannah",
+		"family": "Sande",
+		"given": "Hannah",
+		"url": "https://linguistics.berkeley.edu/~hsande/"
+	},
+	{ "id": "sarıgül-özge", "family": "Sarıgül", "given": "Özge" },
+	{ "id": "t-duncan-philip", "family": "T. Duncan", "given": "Philip" },
+	{ "id": "wolff-h-ekkehard", "family": "Wolff", "given": "H. Ekkehard" },
+	{ "id": "yu-hsiang-lo-roger", "family": "Yu-Hsiang Lo", "given": "Roger" },
+	{
+		"id": "yuan-michelle",
+		"family": "Yuan",
+		"given": "Michelle",
+		"url": "https://yuan.humspace.ucla.edu/"
+	},
+	{ "id": "zhang-anqi", "family": "Zhang", "given": "Anqi" }
+]
