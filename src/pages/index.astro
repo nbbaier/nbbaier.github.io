@@ -6,8 +6,13 @@ import Header from "../components/Header.astro";
 
 import Section from "../components/Section.astro";
 import "../styles/global.css";
+
 import Paper from "../components/Paper.astro";
-const _papers = await getCollection("papers");
+import Link from "../components/Link.astro";
+import PaperList from "../components/PaperList.astro";
+
+const papers = await getCollection("output");
+const people = await getCollection("people");
 ---
 
 <html lang="en">
@@ -15,11 +20,29 @@ const _papers = await getCollection("papers");
    <body class="p-6 mx-auto text-base font-normal max-w-[50rem]">
       <Header />
       <main class="pt-6 md:grid md:grid-cols-[min-content_1fr] md:gap-x-8">
-         <Section title="About">
-            Nec dubitamus multa iter quae et nos invenerat. Phasellus laoreet
-            lorem vel dolor tempus vehicula. Unam incolunt Belgae, aliam
-            Aquitani, tertiam. Unam incolunt Belgae, aliam Aquitani, tertiam.
-         </Section>
+         <Section title="About"
+            ><p>
+               I am a Chicago based linguist interested in syntax, morphology,
+               and typology. Previously, I was a postdoctoral researcher and
+               lecturer in the Department of Linguistics at the Univerisity of
+               British Columbia (2019-2020) and a postdoctoral researcher in the
+               Department of Linguistics at McGill University (2017-2019). I
+               have a PhD in linguistics from University of California,
+               Berkeley. I also have an M.A. in Linguistics from Berkeley and a
+               B.A. in Linguistics and German from the University of Michigan.
+               I've also spent some time in the Department of Linguistics at MIT
+               in the Fall of 2015.
+            </p>
+            <p>
+               You can download the latest version of my CV
+               <Link
+                  underline
+                  to="https://nbbaier.github.io/online-cv/baier_cv.pdf"
+                  title="here"
+                  >here
+               </Link>.
+            </p></Section
+         >
          <Section title="Interests">
             <p>
                My primary interests are in syntax, morphology, and typology. My
@@ -44,7 +67,7 @@ const _papers = await getCollection("papers");
          </Section>
          <Dissertation />
          <Section title="Papers">
-            {papers.map((p) => <Paper id={p.id} type="paper" />)}
+            <PaperList type="article-journal" data={papers} />
          </Section>
       </main>
    </body>
