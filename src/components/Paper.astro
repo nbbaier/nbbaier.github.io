@@ -3,16 +3,15 @@ import { getEntries, getEntry } from "astro:content";
 import Link from "./Link.astro";
 
 interface Props {
-	id: string;
+   id: string;
 }
 
 const { id } = Astro.props;
 
-const paper = await getEntry("papers", id);
-
-const coauthors = paper?.data.coauthors
-	? await getEntries(paper?.data.coauthors)
-	: undefined;
+const paper = await getEntry("output", id);
+const authors = paper?.data.author
+   ? await getEntries(paper?.data.author)
+   : undefined;
 ---
 
 {
@@ -20,8 +19,9 @@ const coauthors = paper?.data.coauthors
       <div class="flex flex-col gap-1 p-2 border rounded">
          <div class="font-semibold ">{paper.data.title}</div>
          <div class="flex flex-row gap-1.5 text-sm">
-            {paper.data.date}, {paper.data.publishedIn}
-            {paper.data.paperLink.map((link) => {
+            {paper.data.issued["date-parts"][0][0]},{" "}
+            {paper.data["container-title"]}
+            {/* {paper.data.link.map((link) => {
                return (
                   <>
                      <span>|</span>
@@ -30,22 +30,21 @@ const coauthors = paper?.data.coauthors
                      </Link>
                   </>
                );
-            })}
+            })} */}
          </div>
 
-         {coauthors && (
+         {authors && (
             <div class="text-sm">
-               with{" "}
-               {coauthors.map((author, index) =>
+               {authors.map((author, index) =>
                   author.data.url ? (
-                     <Link to={author.data.url} title={author.data.name}>
-                        {author.data.name}
-                        {index < coauthors.length - 1 && ", "}
+                     <Link to={author.data.url} title={author.data.family}>
+                        {`${author.data.given} ${author.data.family}`}
+                        {index < authors.length - 1 && ", "}
                      </Link>
                   ) : (
                      <span>
-                        {author.data.name}
-                        {index < coauthors.length - 1 && ", "}
+                        {`${author.data.given} ${author.data.family}`}
+                        {index < authors.length - 1 && ", "}
                      </span>
                   )
                )}
