@@ -1,5 +1,11 @@
 {
-   "files.associations": {
-      "*.css": "tailwindcss"
-   }
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"json.schemas": [
+		{
+			"fileMatch": ["src/data/output.json"],
+			"url": "https://resource.citationstyles.org/schema/v1.0/input/json/csl-data.json"
+		}
+	]
 }
