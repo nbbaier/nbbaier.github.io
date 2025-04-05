@@ -1,10 +1,10 @@
+import { siteConfig } from "./src/site.config";
 import tailwindcss from "@tailwindcss/vite";
 import robotsTxt from "astro-robots-txt";
 import { defineConfig } from "astro/config";
 
-// https://astro.build/config
 export default defineConfig({
-	site: "https://nicobaier.com",
+	site: siteConfig.url,
 	vite: {
 		plugins: [tailwindcss()],
 	},
