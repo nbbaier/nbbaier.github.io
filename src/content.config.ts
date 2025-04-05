@@ -1,12 +1,11 @@
+import { DATA } from "@/lib/config";
+import { publicationSchema } from "@/lib/schema";
+import { parseOutput } from "@/lib/utils";
 import { file } from "astro/loaders";
 import { defineCollection, reference, z } from "astro:content";
-import { publicationSchema } from "./utils/cslSchema";
-import { loadOutput } from "./utils/utils";
-
-const BASE_DIR = "src/data";
 
 const people = defineCollection({
-	loader: file(`${BASE_DIR}/people.json`),
+	loader: file(`${DATA}/people.json`),
 	schema: z.object({
 		family: z.string(),
 		given: z.string(),
@@ -15,7 +14,9 @@ const people = defineCollection({
 });
 
 const output = defineCollection({
-	loader: loadOutput,
+	loader: file(`${DATA}/output.json`, {
+		parser: (text) => parseOutput(text),
+	}),
 	schema: publicationSchema.merge(
 		z.object({
 			author: z.array(reference("people")),

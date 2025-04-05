@@ -1,9 +1,10 @@
 ---
-import Head from "../components/Head.astro";
+import Head from "@/components/Head.astro";
 ---
 
-<html lang="en"></html>
-<Head />
-<body>
-   <slot />
-</body>
+<html lang="en">
+   <Head />
+   <body class="p-6 mx-auto text-base font-normal max-w-[50rem]">
+      <slot />
+   </body>
+</html>

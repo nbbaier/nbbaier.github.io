@@ -1,0 +1,34 @@
+---
+import Header from "@/components/Header.astro";
+import Section from "@/components/Section.astro";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
+import { getCollection } from "astro:content";
+
+const papers = await getCollection("output");
+const people = await getCollection("people");
+---
+
+<Layout>
+   <Header />
+   <main class="pt-6 md:grid md:grid-cols-[min-content_1fr] md:gap-x-8">
+      <Section title="About"
+         ><p>
+            Inmensae subtilitatis, obscuris et malesuada fames. Plura mihi bona
+            sunt, inclinet, amari petere vellent. Ab illo tempore, ab est sed
+            immemorabili. Ullamco laboris nisi ut aliquid ex ea commodi
+            consequat. Quae vero auctorem tractata ab fiducia dicuntur. At nos
+            hinc posthac, sitientis piros Afros.
+         </p>
+      </Section>
+      <Section title="Interests">
+         <p>
+            Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod
+            tempor incidunt ut labore et dolore magna aliqua. Donec sed odio
+            operae, eu vulputate felis rhoncus. Salutantibus vitae elit libero,
+            a pharetra augue. Nihil hic munitissimus habendi senatus locus,
+            nihil horum? A communi observantia non est recedendum.
+         </p>
+      </Section>
+   </main>
+</Layout>

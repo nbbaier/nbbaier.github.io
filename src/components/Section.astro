@@ -8,9 +8,11 @@ const { title } = Astro.props;
 
 <section
    id={title.toLowerCase()}
-   class="md:contents first:pt-0 after:col-span-full not-last:after:h-px after:bg-gray-500 after:my-6 after:mx-0 after:block"
+   class="md:contents first:pt-0 after:col-span-full not-last:after:h-px after:bg-border after:my-6 after:mx-0 after:block"
 >
-   <div class="pb-2 font-bold md:pb-0 text-normal">{title}</div>
+   <div class="pb-2 font-bold text-primary md:pb-0 text-normal">
+      {title}
+   </div>
    <div class="flex flex-col gap-3">
       <slot />
    </div>

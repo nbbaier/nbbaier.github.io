@@ -1,23 +1,11 @@
-import { type ClassValue, clsx } from "clsx";
-import fs from "node:fs";
-import { twMerge } from "tailwind-merge";
-import type { CSLData } from "./cslSchema";
+import type { CSLData } from "./schema";
 
-const BASE_DIR = "src/data";
-
-export function cn(...inputs: ClassValue[]) {
-	return twMerge(clsx(inputs));
-}
-
-export const normName = (name: string) => {
+const normName = (name: string) => {
 	return name.toLocaleLowerCase().replace(".", "").replace(" ", "-");
 };
 
-export const loadOutput = () => {
-	const data = JSON.parse(
-		fs.readFileSync(`${BASE_DIR}/output.json`).toString(),
-	) as CSLData;
-
+export const parseOutput = (text: string) => {
+	const data = JSON.parse(text) as CSLData;
 	return data.map((item) => {
 		const authors = item.author.map(
 			(author) => `${normName(author.family)}-${normName(author.given)}`,

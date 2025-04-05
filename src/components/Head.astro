@@ -1,7 +1,7 @@
 ---
 import { AstroFont } from "astro-font";
 import { SEO } from "astro-seo";
-import "./src/styles/style.css";
+import "@/styles/global.css";
 
 const siteTitle = "Nico Baier";
 const author = "Nico Baier";
@@ -74,12 +74,13 @@ const websiteSchema = JSON.stringify({
          ],
       }}
    />
-   <!-- 
+
    <AstroFont
       config={[
          {
             src: [],
             name: "Work Sans",
+            // Google Fonts URL
             googleFontsURL:
                "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
             preload: true,
@@ -88,7 +89,7 @@ const websiteSchema = JSON.stringify({
             fallback: "sans-serif",
          },
       ]}
-   /> -->
+   />
 
    <title>Nico Baier</title>
 

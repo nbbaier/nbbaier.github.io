@@ -1,74 +1,67 @@
 ---
+import Dissertation from "@/components/Dissertation.astro";
+import Head from "@/components/Head.astro";
+import Header from "@/components/Header.astro";
+import Link from "@/components/Link.astro";
+import PaperList from "@/components/PaperList.astro";
+import Section from "@/components/Section.astro";
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/global.css";
 import { getCollection } from "astro:content";
-import Dissertation from "../components/Dissertation.astro";
-import Head from "../components/Head.astro";
-import Header from "../components/Header.astro";
-
-import Section from "../components/Section.astro";
-import "../styles/global.css";
-
-import Paper from "../components/Paper.astro";
-import Link from "../components/Link.astro";
-import PaperList from "../components/PaperList.astro";
 
 const papers = await getCollection("output");
 const people = await getCollection("people");
 ---
 
-<html lang="en">
-   <Head />
-   <body class="p-6 mx-auto text-base font-normal max-w-[50rem]">
-      <Header />
-      <main class="pt-6 md:grid md:grid-cols-[min-content_1fr] md:gap-x-8">
-         <Section title="About"
-            ><p>
-               I am a Chicago based linguist interested in syntax, morphology,
-               and typology. Previously, I was a postdoctoral researcher and
-               lecturer in the Department of Linguistics at the Univerisity of
-               British Columbia (2019-2020) and a postdoctoral researcher in the
-               Department of Linguistics at McGill University (2017-2019). I
-               have a PhD in linguistics from University of California,
-               Berkeley. I also have an M.A. in Linguistics from Berkeley and a
-               B.A. in Linguistics and German from the University of Michigan.
-               I've also spent some time in the Department of Linguistics at MIT
-               in the Fall of 2015.
-            </p>
-            <p>
-               You can download the latest version of my CV
-               <Link
-                  underline
-                  to="https://nbbaier.github.io/online-cv/baier_cv.pdf"
-                  title="here"
-                  >here
-               </Link>.
-            </p></Section
-         >
-         <Section title="Interests">
-            <p>
-               My primary interests are in syntax, morphology, and typology. My
-               research focuses on the morphosyntax of Ā-dependencies, including
-               the interaction of phi-agreement and Ā-movement and morphological
-               reflexes of Ā-movement. More generally, I am interested in
-               theories of agreement and what they can tell us about the
-               grammar. On a broader scale, my work aims to meld rigorous
-               typological research with minimalist analysis.
-            </p>
-            <p>
-               I have conducted fieldwork on several understudied languages.
-               These include two languages of Senegal, Seereer (Atlantic) and
-               Noon (Cangin). Some of this work can be seen in my PhD qualifying
-               paper on long distance wh-dependencies in Seereer and my
-               presentations about adjective agreement in Noon. I have also
-               worked on indigenous languages of North America. While in
-               Berkeley I participated in the Karuk Treebank Project. While at
-               University of Michigan, I worked on Sally Thomason's Montana
-               Salish (Flathead) dictionary project.
-            </p>
-         </Section>
-         <Dissertation />
-         <Section title="Papers">
-            <PaperList type="article-journal" data={papers} />
-         </Section>
-      </main>
-   </body>
-</html>
+<Layout>
+   <Header />
+   <main class="pt-6 md:grid md:grid-cols-[min-content_1fr] md:gap-x-8">
+      <Section title="About"
+         ><p>
+            I am a Chicago based linguist interested in syntax, morphology, and
+            typology. Previously, I was a postdoctoral researcher and lecturer
+            in the Department of Linguistics at the Univerisity of British
+            Columbia (2019-2020) and a postdoctoral researcher in the Department
+            of Linguistics at McGill University (2017-2019). I have a PhD in
+            linguistics from University of California, Berkeley. I also have an
+            M.A. in Linguistics from Berkeley and a B.A. in Linguistics and
+            German from the University of Michigan. I've also spent some time in
+            the Department of Linguistics at MIT in the Fall of 2015.
+         </p>
+         <p>
+            You can download the latest version of my CV
+            <Link
+               underline
+               to="https://nbbaier.github.io/online-cv/baier_cv.pdf"
+               title="here"
+               >here
+            </Link>
+         </p></Section
+      >
+      <Section title="Interests">
+         <p>
+            My primary interests are in syntax, morphology, and typology. My
+            research focuses on the morphosyntax of Ā-dependencies, including
+            the interaction of phi-agreement and Ā-movement and morphological
+            reflexes of Ā-movement. More generally, I am interested in theories
+            of agreement and what they can tell us about the grammar. On a
+            broader scale, my work aims to meld rigorous typological research
+            with minimalist analysis.
+         </p>
+         <p>
+            I have conducted fieldwork on several understudied languages. These
+            include two languages of Senegal, Seereer (Atlantic) and Noon
+            (Cangin). Some of this work can be seen in my PhD qualifying paper
+            on long distance wh-dependencies in Seereer and my presentations
+            about adjective agreement in Noon. I have also worked on indigenous
+            languages of North America. While in Berkeley I participated in the
+            Karuk Treebank Project. While at University of Michigan, I worked on
+            Sally Thomason's Montana Salish (Flathead) dictionary project.
+         </p>
+      </Section>
+      <Dissertation />
+      <Section title="Papers">
+         <PaperList />
+      </Section>
+   </main>
+</Layout>

@@ -1,38 +1,21 @@
 ---
-import {
-   getCollection,
-   type InferEntrySchema,
-   type RenderedContent,
-} from "astro:content";
-import type { CSLData } from "../utils/cslSchema";
+import type { CSLType } from "@/lib/schema";
+import { getCollection } from "astro:content";
 import Paper from "./Paper.astro";
 
 interface Props {
-   data: {
-      id: string;
-      body?: string;
-      collection: "output";
-      data: InferEntrySchema<"output">;
-      rendered?: RenderedContent;
-      filePath?: string;
-   }[];
-   type:
-      | "article-journal"
-      | "paper-conference"
-      | "chapter"
-      | "manuscript"
-      | "speech";
+   type?: CSLType;
 }
 
-const { type, data } = Astro.props;
+const { type } = Astro.props;
 
-const papers = await getCollection("output");
+const output = await getCollection("output");
 ---
 
 <div class="contents">
    {
-      data
-         .filter((item) => item.data.type === type)
+      output
+         .filter((item) => !type || item.data.type === type)
          .map((item) => <Paper id={item.id} />)
    }
 </div>

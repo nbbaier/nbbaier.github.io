@@ -1,14 +1,21 @@
 import { z } from "astro/zod";
 import doi from "doi-regex";
-
-export const cslPersonSchema = z.object({
+const cslPersonSchema = z.object({
 	family: z.string(),
 	given: z.string(),
 });
 
 const datePartsSchema = z.array(z.array(z.number()));
 
-export const dateSchema = z.object({
+const cslTypeSchema = z.enum([
+	"article-journal",
+	"paper-conference",
+	"chapter",
+	"manuscript",
+	"speech",
+]);
+
+const dateSchema = z.object({
 	"date-parts": datePartsSchema,
 });
 
@@ -28,13 +35,7 @@ export const publicationSchema = z.object({
 	"publisher-place": z.string().optional(),
 	title: z.string(),
 	"title-short": z.string().optional(),
-	type: z.enum([
-		"article-journal",
-		"paper-conference",
-		"chapter",
-		"manuscript",
-		"speech",
-	]),
+	type: cslTypeSchema,
 	volume: z.string().optional(),
 	"collection-title": z.string().optional(),
 	editor: z.array(cslPersonSchema).optional(),
@@ -45,6 +46,7 @@ export const publicationSchema = z.object({
 
 export const publicationsSchema = z.array(publicationSchema);
 
+export type CSLType = z.infer<typeof cslTypeSchema>;
 export type CSLPerson = z.infer<typeof cslPersonSchema>;
 export type CSLPublication = z.infer<typeof publicationSchema>;
 export type CSLData = z.infer<typeof publicationsSchema>;
