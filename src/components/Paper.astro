@@ -35,19 +35,20 @@ const authors = paper?.data.author
 
          {authors && (
             <div class="text-sm">
-               {authors.map((author, index) =>
-                  author.data.url ? (
-                     <Link to={author.data.url} title={author.data.family}>
-                        {`${author.data.given} ${author.data.family}`}
+               {authors.map((author, index) => {
+                  const fullName = `${author.data.given} ${author.data.family}`;
+                  return author.data.url ? (
+                     <Link to={author.data.url} title={fullName}>
+                        {fullName}
                         {index < authors.length - 1 && ", "}
                      </Link>
                   ) : (
                      <span>
-                        {`${author.data.given} ${author.data.family}`}
+                        {fullName}
                         {index < authors.length - 1 && ", "}
                      </span>
-                  )
-               )}
+                  );
+               })}
             </div>
          )}
       </div>

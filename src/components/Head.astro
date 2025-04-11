@@ -1,97 +1,47 @@
 ---
-import { AstroFont } from "astro-font";
-import { SEO } from "astro-seo";
+import { siteConfig, websiteSchema } from "@/site.config";
+import { MetaTags } from "@codemint/astro-meta";
+
 import "@/styles/global.css";
 
-const siteTitle = "Nico Baier";
-const author = "Nico Baier";
-const canonicalURL = Astro.url.toString();
-const description = "Nico Baier's personal website";
-
-const personSchema = {
-   "@context": "http://schema.org",
-   "@type": "Person",
-   email: "mailto:nico.baier@gmail.com",
-   jobTitle: "Natural Language Analyst",
-   name: "Nico Baier",
-   additionalName: "Nicholas Baier",
-   alumniOf: ["University of Michigan", "University of California, Berkeley"],
-   birthPlace: "Ann Arbor, Michigan",
-   url: "https://nicobaier.com",
-   sameAs: [
-      "https://linkedin.com/in/nbbaier",
-      "https://github.com/nbbaier/",
-      "https://bsky.app/profile/nicobaier.com",
-   ],
-};
-
-const websiteSchema = JSON.stringify({
-   "@context": "http://schema.org",
-   "@type": "WebPage",
-   name: { siteTitle },
-   description: { description },
-   author: personSchema,
-});
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+console.log(canonicalURL.toString());
 ---
 
 <head>
-   <meta charset="utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-   <SEO
-      title={siteTitle}
-      description={description}
-      canonical={canonicalURL}
+   <MetaTags
+      title={siteConfig.title}
+      description={siteConfig.description}
+      canonicalUrl={canonicalURL.toString()}
       openGraph={{
-         basic: {
-            title: siteTitle,
-            type: "website",
-            image: "",
-            url: Astro.url.toString(),
-         },
-         optional: { siteName: "Nico Baier", description, locale: "en_US" },
+         type: "website",
+         title: siteConfig.title, // this will need to change for different pages
+         image: { url: "" },
+         url: canonicalURL.toString(),
+         siteName: siteConfig.title,
+         locale: siteConfig.ogLocale,
+         description: siteConfig.description,
       }}
-      ,
       twitter={{
-         card: "summary",
-         creator: "@nbbaier",
-         title: siteTitle,
-         description,
-      }}
-      ,extend={{
-         link: [
-            { rel: "me", href: "mailto:nico.baier@gmail.com" },
-            { rel: "me", href: "https://github.com/nbbaier" },
-            {
-               rel: "authorization_endpoint",
-               href: "https://indieauth.com/auth",
-            },
-            {
-               rel: "token_endpoint",
-               href: "https://tokens.indieauth.com/token",
-            },
-            { rel: "micropub", href: "https://micropub.nicobaier.com/" },
-         ],
+         type: "summary",
+         site: "@nbbaier",
+         title: siteConfig.title,
+         description: siteConfig.description,
       }}
    />
 
-   <AstroFont
-      config={[
-         {
-            src: [],
-            name: "Work Sans",
-            // Google Fonts URL
-            googleFontsURL:
-               "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
-            preload: true,
-            display: "swap",
-            selector: "body",
-            fallback: "sans-serif",
-         },
-      ]}
-   />
+   <link href="mailto:nico.baier@gmail.com" rel="me" />
+   <link href="https://github.com/nbbaier" rel="me" />
+   <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+   <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
+   <link rel="micropub" href="https://micropub.nicobaier.com/" />
 
-   <title>Nico Baier</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+   />
 
    <script
       is:inline
