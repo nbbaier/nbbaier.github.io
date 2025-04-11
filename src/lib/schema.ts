@@ -1,5 +1,6 @@
 import { z } from "astro/zod";
 import doi from "doi-regex";
+
 const cslPersonSchema = z.object({
 	family: z.string(),
 	given: z.string(),

@@ -1,4 +1,4 @@
-import type { CSLData } from "./schema";
+import type { CSLData } from "../schema";
 
 const normName = (name: string) => {
 	return name.toLocaleLowerCase().replace(".", "").replace(" ", "-");
@@ -13,8 +13,7 @@ export const parseOutput = (text: string) => {
 
 		const editors = item.editor
 			? item.editor.map(
-					(editor) =>
-						`${normName(editor.family)}-${normName(editor.given)}`,
+					(editor) => `${normName(editor.family)}-${normName(editor.given)}`,
 				)
 			: [];
 
