@@ -24,7 +24,7 @@
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double",
-			"bracketSameLine": false
+			"bracketSameLine": true
 		}
 	},
 	"json": {
@@ -34,7 +34,9 @@
 	},
 	"overrides": [
 		{
-			"include": ["*.astro"],
+			"include": [
+				"*.astro"
+			],
 			"linter": {
 				"rules": {
 					"style": {

@@ -1,10 +1,13 @@
 ---
 import Head from "@/components/Head.astro";
+import { siteConfig } from "@/site.config";
 ---
 
-<html lang="en">
+<html class="scroll-smooth" lang={siteConfig.lang}>
    <Head />
-   <body class="p-6 mx-auto text-base font-normal max-w-[50rem]">
+   <body
+      class="px-8 py-6 mx-auto text-base font-normal max-w-[48rem] font-primary"
+   >
       <slot />
    </body>
 </html>

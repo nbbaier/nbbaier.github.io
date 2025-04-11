@@ -1,12 +1,18 @@
 {
 	"extends": "astro/tsconfigs/strict",
-	"exclude": ["dist"],
-	"include": [".astro/types.d.ts", "**/*"],
+	"exclude": [
+		"dist"
+	],
+	"include": [
+		".astro/types.d.ts",
+		"**/*"
+	],
 	"compilerOptions": {
 		"baseUrl": ".",
-		"types": ["bun-types"],
 		"paths": {
-			"@/*": ["src/*"]
+			"@/*": [
+				"src/*"
+			]
 		}
 	}
 }

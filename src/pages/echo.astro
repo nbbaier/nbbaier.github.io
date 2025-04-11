@@ -3,10 +3,6 @@ import Header from "@/components/Header.astro";
 import Section from "@/components/Section.astro";
 import Layout from "@/layouts/Layout.astro";
 import "@/styles/global.css";
-import { getCollection } from "astro:content";
-
-const papers = await getCollection("output");
-const people = await getCollection("people");
 ---
 
 <Layout>
