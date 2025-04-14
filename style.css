@@ -3,7 +3,9 @@
    --color-primary: #111;
    --color-bg: #fffffc;
    --color-border: #898989;
-   --font-primary: "DM Sans", "Work Sans", system-ui, -apple-system, sans-serif;
+   --font-primary: "Geist", -apple-system, BlinkMacSystemFont, avenir next,
+      avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto,
+      noto, arial, sans-serif;
 }
 
 /* Resets from
