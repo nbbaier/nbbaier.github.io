@@ -19,10 +19,73 @@
 
    <link rel="preconnect" href="https://fonts.googleapis.com" />
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <lin
+   <link
       href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Recursive:wght@300..1000&display=swap"
       rel="stylesheet" />
-   <link rel="stylesheet" href="style.css" />
+
+   <script src="https://cdn.tailwindcss.com"></script>
+   <script>
+      tailwind.config = {
+         theme: {
+            extend: {
+               colors: {
+                  primary: '#111',
+                  bg: '#fffffc',
+                  border: '#898989',
+               },
+               fontFamily: {
+                  heading: ['Recursive', 'system-ui', 'sans-serif'],
+                  mono: ['Geist Mono', '-apple-system', 'BlinkMacSystemFont', 'avenir next', 'avenir', 'segoe ui', 'helvetica neue', 'helvetica', 'Cantarell', 'Ubuntu', 'roboto', 'noto', 'arial', 'sans-serif'],
+               },
+            },
+         },
+      }
+   </script>
+   <style type="text/tailwindcss">
+      @layer base {
+         *, *::before, *::after {
+            box-sizing: border-box;
+         }
+         * {
+            margin: 0;
+         }
+         html {
+            font-size: 100%;
+            text-size-adjust: none;
+            -webkit-font-smoothing: antialiased;
+         }
+         body {
+            text-rendering: optimizeLegibility;
+            text-decoration-skip-ink: auto;
+            font-optical-sizing: auto;
+            font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures contextual;
+            font-kerning: normal;
+         }
+         p, h1, h2, h3, h4, h5, h6 {
+            overflow-wrap: break-word;
+         }
+         p {
+            text-wrap: pretty;
+         }
+         h1, h2, h3, h4, h5, h6 {
+            text-wrap: balance;
+         }
+         section {
+            display: contents;
+         }
+         section::after {
+            content: "";
+            grid-column: 1 / -1;
+            height: 1px;
+            background-color: #898989;
+            opacity: 0.5;
+            margin: 1rem 0;
+         }
+         section:last-child::after {
+            display: none;
+         }
+      }
+   </style>
 
    <meta property="og:site_name" content="Nico Baier" />
    <meta property="og:url" content="https://nicobaier.com/" />
@@ -55,11 +118,11 @@
       </script>
 </head>
 
-<body>
-   <header>
-      <div class="header-container">
-         <h1 class="header-title">Nico Baier</h1>
-         <div class="header-subtitle">
+<body class="mx-auto max-w-[52rem] p-4 text-[0.975rem] font-mono leading-7 text-primary bg-bg">
+   <header class="border-b-2 border-border">
+      <div class="pb-3">
+         <h1 class="font-heading text-[2rem] font-bold pb-0">Nico Baier</h1>
+         <div class="flex gap-2">
             <div>Developer and Linguist</div>
             <div>|</div>
             <a href="mailto:nico.baier@gmail.com">email</a>
@@ -74,10 +137,10 @@
          </div>
       </div>
    </header>
-   <main>
+   <main class="grid grid-cols-[min-content_1fr] gap-x-8 pt-4 max-md:grid-cols-1 max-md:gap-2">
       <section id="about">
-         <h2 class="section-title">About</h2>
-         <div class="section-content">
+         <h2 class="font-heading font-semibold text-lg text-primary leading-tight max-md:pb-1">About</h2>
+         <div class="flex flex-col gap-4">
             <p>
                I am a Chicago based software engineer and linguist interested in syntax,
                morphology, and typology.
@@ -90,8 +153,8 @@
       </section>
 
       <section id="experience">
-         <h2 class="section-title">Experience</h2>
-         <div class="section-content">
+         <h2 class="font-heading font-semibold text-lg text-primary leading-tight max-md:pb-1">Experience</h2>
+         <div class="flex flex-col gap-4">
             <p>
                I was a postdoctoral
                researcher and lecturer in the Department of Linguistics at
@@ -108,8 +171,8 @@
       </section>
 
       <section id="interests">
-         <h2 class="section-title">Interests</h2>
-         <div class="section-content">
+         <h2 class="font-heading font-semibold text-lg text-primary leading-tight max-md:pb-1">Interests</h2>
+         <div class="flex flex-col gap-4">
             <p>
                My primary interests are in syntax, morphology, and typology.
                My research focuses on the morphosyntax of Ā-dependencies,
@@ -134,15 +197,15 @@
       </section>
 
       <section id="dissertation">
-         <h2 class="section-title">Dissertation</h2>
-         <div class="section-content">
-            <div class="paper-content">
-               <div class="paper-title">Anti-Agreement</div>
-               <div class="paper-details">
+         <h2 class="font-heading font-semibold text-lg text-primary leading-tight max-md:pb-1">Dissertation</h2>
+         <div class="flex flex-col gap-4">
+            <div>
+               <div class="font-semibold">Anti-Agreement</div>
+               <div class="text-[0.9375rem]">
                   2018 |
                   <a href="https://ling.auf.net/lingbuzz/004545">lingbuzz</a>
                </div>
-               <div class="abstract">
+               <div class="text-[0.9375rem] mt-2">
                   I investigate the sensitivity of φ-agreement to features
                   typically associated with Ā-extraction, including those
                   related to wh-questioning, relativization, focus and
@@ -171,14 +234,14 @@
       </section>
 
       <section id="papers">
-         <h2 class="section-title">Papers</h2>
-         <div class="section-content">
-            <div class="paper-content">
-               <div class="paper-title">
+         <h2 class="font-heading font-semibold text-lg text-primary leading-tight max-md:pb-1">Papers</h2>
+         <div class="flex flex-col gap-4">
+            <div>
+               <div class="font-semibold">
                   Mayan Agent Focus and the Ergative Extraction Constraint:
                   Facts and Fictions Revisited
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   2019, Manuscript |
                   <a href="https://ling.auf.net/lingbuzz/004545">lingbuzz</a>
                   | with
@@ -186,70 +249,70 @@
                   and Ted Levin
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">Antilocality and Antiagreement</div>
-               <div class="paper-details">
+            <div>
+               <div class="font-semibold">Antilocality and Antiagreement</div>
+               <div class="text-[0.9375rem]">
                   2017, Linguistic Inquiry 48:2 |
                   <a href="https://doi.org/10.1162/LING_a_00246">LI</a>
                   |
                   <a href="http://ling.auf.net/lingbuzz/003275">lingbuzz</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Morphological Reflexes of Subject Extraction in Caquinte
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   2019, Proceedings of WSCLA 23 |
                   <a href="https://ling.auf.net/lingbuzz/004286">lingbuzz</a>
                   | with
                   <a href="http://linguistics.berkeley.edu/~zjohagan/">Zachary O'Hagan</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Anti-agreement with Bound Variables
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   2018, Proceedings of WCCFL 35 |
                   <a href="  http://ling.auf.net/lingbuzz/003639">lingbuzz</a>
                   | with
                   <a href="http://web.mit.edu/yuanm/www/">Michelle Yuan</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Spell-out, Chains, and Long Distance Wh-movement in Seereer
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   2018, Berkeley Papers in Formal Linguistics |
                   <a href="https://escholarship.org/uc/item/8rg91081">BPFL link</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Adjective Agreement in Noon: Evidence for a Split Theory of
                   Noun-Modifier Concord
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   2015, Proceedings of NELS 45 |
                   <a href="http://ling.auf.net/lingbuzz/002631">lingbuzz</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Object Suffixes as Incorporated Pronouns in Seereer
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   2018, Proceedings of ACAL 45 |
                   <a href="http://ling.auf.net/lingbuzz/003311">lingbuzz</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   A Survey of Anti-Agreement Effects
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   2016, Dissertation Prospectus |
                   <a href="https://nbbaier.github.io/online-papers/baier_prospectus.pdf">manuscript</a>
                </div>
@@ -258,96 +321,96 @@
       </section>
 
       <section id="presentations">
-         <h2 class="section-title">Presentations</h2>
-         <div class="section-content">
-            <div class="paper-content">
-               <div class="paper-title">
+         <h2 class="font-heading font-semibold text-lg text-primary leading-tight max-md:pb-1">Presentations</h2>
+         <div class="flex flex-col gap-4">
+            <div>
+               <div class="font-semibold">
                   The Locus of Variation in types of Ā-Sensitive Agreement
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   Parameters Workshop in Honour of Lisa Travis, McGill
                   University, May 17-18, 2019 |
                   <a href="https://nbbaier.github.io/online-papers/baier_parameters-workshop-handout.pdf">handout</a>
                   |
                   <a href="https://nbbaier.github.io/online-papers/baier_parameters-workshop-poster.pdf">poster</a>
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   CamCos 8, University of Cambridge, May 2-4, 2019 |
                   <a href="https://nbbaier.github.io/online-papers/baier_camcos2019-handout.pdf">poster</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">Anti-agreement in Selayarese</div>
-               <div class="paper-details">
+            <div>
+               <div class="font-semibold">Anti-agreement in Selayarese</div>
+               <div class="text-[0.9375rem]">
                   LSA 2019, New York, NY, Jan 3-6, 2019 |
                   <as href="https://nbbaier.github.io/online-papers/baier-lsa2019.pdf">poster</as>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Multiple Anti-Agreement in Fiorentino
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   Multiple Agreement across Domains, ZAS, Berlin, November
                   8-9, 2018 |
                   <a href="https://nbbaier.github.io/online-papers/baier-MAD2018.pdf">poster</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   A Morphological Theory of Anti-Agreement
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   LSA 2017, Austin, TX, Jan 5-8, 2017 |
                   <a href="https://nbbaier.github.io/online-papers/baier-lsa2017-poster.pdf">poster</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Anti-Agreement with Bound Variables
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   WCCFL 35, University of Calgary, April 28-30, 2017 |
                   <a href="https://nbbaier.github.io/online-papers/baier-yuan-wccfl2017-handout.pdf">handout</a>
                   | with
                   <a href="https://quote.ucsd.edu/myuan/">Michelle Yuan</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   The Unity of Anti-Agreement and Wh-Agreement
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   CamCos 5, Cambridge, UK, 5-7 May 2016 |
                   <a href="https://nbbaier.github.io/online-papers/baier-camcos5.pdf">handout</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">Deriving Partial Anti-Agreement</div>
-               <div class="paper-details">
+            <div>
+               <div class="font-semibold">Deriving Partial Anti-Agreement</div>
+               <div class="text-[0.9375rem]">
                   LSA 2016, Washington D.C., Jan 7-10, 2016 |
                   <a href="https://nbbaier.github.io/online-papers/baier_lsa2016_handout.pdf">handout</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Adjective Agreement in Noon: Evidence for a Split Theory of
                   Noun-Modifier Concord
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   LSA 2015, Portland, Jan 8-11, 2015 |
                   <a href="https://nbbaier.github.io/online-papers/baier_lsa2015_handout.pdf">handout</a>
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   NELS 45, MIT, October 31 2014
                   <a href="https://nbbaier.github.io/online-papers/baier_nels45_handout.pdf">handout</a>
                </div>
             </div>
-            <div class="paper-content">
-               <div class="paper-title">
+            <div>
+               <div class="font-semibold">
                   Object Suffixes as Incorporated Pronouns in Seereer
                </div>
-               <div class="paper-details">
+               <div class="text-[0.9375rem]">
                   ACAL 45, University of Kansas, April 17 2014 |
                   <a href="https://nbbaier.github.io/online-papers/baier_acal45_handout.pdf">handout</a>
                </div>
