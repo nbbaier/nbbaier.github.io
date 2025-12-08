@@ -67,9 +67,9 @@ h6 {
 /* Body styles */
 body {
    margin-inline: auto;
-   max-width: 48rem;
+   max-width: 52rem;
    padding: 1rem;
-   font-size: 1rem;
+   font-size: 0.975rem;
    font-family: var(--font-primary);
    font-weight: 400;
    color: var(--color-primary);
