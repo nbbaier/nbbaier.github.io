@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <title>NICO BAIER // Developer & Linguist</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="description" content="Nico Baier - Developer and Linguist" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+   <style>
+      :root {
+         --bg-dark: #0f0f12;
+         --bg-card: #18181d;
+         --bg-hover: #222228;
+         --text: #e8e8ec;
+         --text-dim: #8888a0;
+         --text-faint: #55556a;
+         --accent-1: #ff6b35;
+         --accent-2: #7c3aed;
+         --accent-3: #06b6d4;
+         --gradient-1: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+         --gradient-2: linear-gradient(135deg, var(--accent-2), var(--accent-3));
+         --font-display: 'Syne', sans-serif;
+         --font-mono: 'Space Mono', monospace;
+         --font-body: 'Outfit', sans-serif;
+         --radius: 12px;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html {
+         font-size: 16px;
+         scroll-behavior: smooth;
+      }
+
+      body {
+         font-family: var(--font-body);
+         background: var(--bg-dark);
+         color: var(--text);
+         line-height: 1.6;
+         min-height: 100vh;
+         overflow-x: hidden;
+      }
+
+      /* Background grid */
+      body::before {
+         content: '';
+         position: fixed;
+         inset: 0;
+         background-image:
+            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+         background-size: 60px 60px;
+         pointer-events: none;
+         z-index: 0;
+      }
+
+      /* Gradient orbs */
+      .orb {
+         position: fixed;
+         border-radius: 50%;
+         filter: blur(100px);
+         opacity: 0.4;
+         pointer-events: none;
+         z-index: 0;
+      }
+
+      .orb-1 {
+         width: 500px;
+         height: 500px;
+         background: var(--accent-1);
+         top: -200px;
+         right: -100px;
+         opacity: 0.15;
+      }
+
+      .orb-2 {
+         width: 400px;
+         height: 400px;
+         background: var(--accent-2);
+         bottom: 10%;
+         left: -100px;
+         opacity: 0.12;
+      }
+
+      .orb-3 {
+         width: 300px;
+         height: 300px;
+         background: var(--accent-3);
+         top: 50%;
+         right: 10%;
+         opacity: 0.1;
+      }
+
+      .container {
+         max-width: 1200px;
+         margin: 0 auto;
+         padding: 0 2rem;
+         position: relative;
+         z-index: 1;
+      }
+
+      /* Navigation */
+      .nav {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 2rem 0;
+         border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .nav-logo {
+         font-family: var(--font-display);
+         font-weight: 700;
+         font-size: 1.25rem;
+         letter-spacing: -0.02em;
+         background: var(--gradient-1);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         background-clip: text;
+      }
+
+      .nav-links {
+         display: flex;
+         gap: 2rem;
+      }
+
+      .nav-links a {
+         font-family: var(--font-mono);
+         font-size: 0.8rem;
+         color: var(--text-dim);
+         text-decoration: none;
+         transition: color 0.2s;
+         position: relative;
+      }
+
+      .nav-links a:hover {
+         color: var(--text);
+      }
+
+      .nav-links a::before {
+         content: '//';
+         opacity: 0;
+         margin-right: 0.25rem;
+         color: var(--accent-1);
+         transition: opacity 0.2s;
+      }
+
+      .nav-links a:hover::before {
+         opacity: 1;
+      }
+
+      /* Hero */
+      .hero {
+         padding: 8rem 0 6rem;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 4rem;
+         align-items: center;
+      }
+
+      .hero-content {
+         position: relative;
+      }
+
+      .hero-badge {
+         display: inline-flex;
+         align-items: center;
+         gap: 0.5rem;
+         padding: 0.5rem 1rem;
+         background: var(--bg-card);
+         border: 1px solid rgba(255,255,255,0.08);
+         border-radius: 100px;
+         font-family: var(--font-mono);
+         font-size: 0.75rem;
+         color: var(--text-dim);
+         margin-bottom: 2rem;
+      }
+
+      .hero-badge::before {
+         content: '';
+         width: 8px;
+         height: 8px;
+         background: var(--accent-3);
+         border-radius: 50%;
+         animation: pulse 2s ease-in-out infinite;
+      }
+
+      @keyframes pulse {
+         0%, 100% { opacity: 1; transform: scale(1); }
+         50% { opacity: 0.5; transform: scale(1.2); }
+      }
+
+      .hero-title {
+         font-family: var(--font-display);
+         font-size: 4rem;
+         font-weight: 800;
+         line-height: 1.1;
+         letter-spacing: -0.03em;
+         margin-bottom: 1.5rem;
+      }
+
+      .hero-title .gradient {
+         background: var(--gradient-1);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         background-clip: text;
+      }
+
+      .hero-desc {
+         font-size: 1.1rem;
+         color: var(--text-dim);
+         max-width: 45ch;
+         margin-bottom: 2.5rem;
+      }
+
+      .hero-buttons {
+         display: flex;
+         gap: 1rem;
+      }
+
+      .btn {
+         display: inline-flex;
+         align-items: center;
+         gap: 0.5rem;
+         padding: 0.875rem 1.5rem;
+         border-radius: var(--radius);
+         font-family: var(--font-mono);
+         font-size: 0.85rem;
+         text-decoration: none;
+         transition: all 0.2s;
+         border: none;
+         cursor: pointer;
+      }
+
+      .btn-primary {
+         background: var(--gradient-1);
+         color: white;
+      }
+
+      .btn-primary:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 10px 40px rgba(255, 107, 53, 0.3);
+      }
+
+      .btn-secondary {
+         background: var(--bg-card);
+         color: var(--text);
+         border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .btn-secondary:hover {
+         background: var(--bg-hover);
+         border-color: rgba(255,255,255,0.2);
+      }
+
+      /* Hero visual */
+      .hero-visual {
+         position: relative;
+         aspect-ratio: 1;
+      }
+
+      .code-window {
+         background: var(--bg-card);
+         border: 1px solid rgba(255,255,255,0.08);
+         border-radius: var(--radius);
+         overflow: hidden;
+         position: absolute;
+         box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      }
+
+      .code-window-1 {
+         width: 90%;
+         top: 5%;
+         left: 5%;
+         z-index: 3;
+      }
+
+      .code-window-2 {
+         width: 80%;
+         top: 20%;
+         left: 15%;
+         z-index: 2;
+         opacity: 0.7;
+      }
+
+      .code-window-3 {
+         width: 70%;
+         top: 35%;
+         left: 25%;
+         z-index: 1;
+         opacity: 0.4;
+      }
+
+      .code-header {
+         display: flex;
+         align-items: center;
+         gap: 0.5rem;
+         padding: 0.75rem 1rem;
+         background: rgba(255,255,255,0.03);
+         border-bottom: 1px solid rgba(255,255,255,0.06);
+      }
+
+      .code-dot {
+         width: 10px;
+         height: 10px;
+         border-radius: 50%;
+      }
+      .code-dot:nth-child(1) { background: #ff5f57; }
+      .code-dot:nth-child(2) { background: #ffbd2e; }
+      .code-dot:nth-child(3) { background: #28c840; }
+
+      .code-title {
+         flex: 1;
+         text-align: center;
+         font-family: var(--font-mono);
+         font-size: 0.7rem;
+         color: var(--text-faint);
+      }
+
+      .code-body {
+         padding: 1.5rem;
+         font-family: var(--font-mono);
+         font-size: 0.8rem;
+         line-height: 1.8;
+      }
+
+      .code-line {
+         display: flex;
+         gap: 1rem;
+      }
+
+      .code-num {
+         color: var(--text-faint);
+         user-select: none;
+         min-width: 20px;
+      }
+
+      .code-keyword { color: var(--accent-2); }
+      .code-func { color: var(--accent-3); }
+      .code-string { color: var(--accent-1); }
+      .code-comment { color: var(--text-faint); }
+
+      /* Section styling */
+      .section {
+         padding: 5rem 0;
+      }
+
+      .section-header {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         margin-bottom: 3rem;
+      }
+
+      .section-title {
+         font-family: var(--font-display);
+         font-size: 2rem;
+         font-weight: 700;
+         display: flex;
+         align-items: center;
+         gap: 1rem;
+      }
+
+      .section-title::before {
+         content: '';
+         width: 40px;
+         height: 4px;
+         background: var(--gradient-1);
+         border-radius: 2px;
+      }
+
+      .section-link {
+         font-family: var(--font-mono);
+         font-size: 0.8rem;
+         color: var(--text-dim);
+         text-decoration: none;
+         display: flex;
+         align-items: center;
+         gap: 0.5rem;
+         transition: color 0.2s;
+      }
+
+      .section-link:hover {
+         color: var(--accent-1);
+      }
+
+      /* Blog cards */
+      .posts-grid {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 1.5rem;
+      }
+
+      .post-card {
+         background: var(--bg-card);
+         border: 1px solid rgba(255,255,255,0.06);
+         border-radius: var(--radius);
+         padding: 1.5rem;
+         text-decoration: none;
+         color: inherit;
+         transition: all 0.3s ease;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .post-card::before {
+         content: '';
+         position: absolute;
+         top: 0;
+         left: 0;
+         right: 0;
+         height: 3px;
+         background: var(--gradient-1);
+         transform: scaleX(0);
+         transition: transform 0.3s ease;
+      }
+
+      .post-card:hover {
+         transform: translateY(-4px);
+         border-color: rgba(255,255,255,0.12);
+         box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+      }
+
+      .post-card:hover::before {
+         transform: scaleX(1);
+      }
+
+      .post-tag {
+         display: inline-block;
+         font-family: var(--font-mono);
+         font-size: 0.7rem;
+         color: var(--accent-3);
+         margin-bottom: 1rem;
+         text-transform: uppercase;
+         letter-spacing: 0.05em;
+      }
+
+      .post-title {
+         font-family: var(--font-display);
+         font-size: 1.25rem;
+         font-weight: 600;
+         margin-bottom: 0.75rem;
+         line-height: 1.3;
+      }
+
+      .post-excerpt {
+         font-size: 0.9rem;
+         color: var(--text-dim);
+         margin-bottom: 1.5rem;
+      }
+
+      .post-meta {
+         font-family: var(--font-mono);
+         font-size: 0.75rem;
+         color: var(--text-faint);
+         display: flex;
+         justify-content: space-between;
+      }
+
+      /* Projects */
+      .projects-grid {
+         display: grid;
+         grid-template-columns: repeat(2, 1fr);
+         gap: 1.5rem;
+      }
+
+      .project-card {
+         background: var(--bg-card);
+         border: 1px solid rgba(255,255,255,0.06);
+         border-radius: var(--radius);
+         padding: 2rem;
+         text-decoration: none;
+         color: inherit;
+         transition: all 0.3s ease;
+         display: grid;
+         grid-template-columns: auto 1fr;
+         gap: 1.5rem;
+      }
+
+      .project-card:hover {
+         border-color: var(--accent-2);
+         box-shadow: 0 0 30px rgba(124, 58, 237, 0.15);
+      }
+
+      .project-icon {
+         width: 50px;
+         height: 50px;
+         background: var(--gradient-2);
+         border-radius: 10px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         font-size: 1.5rem;
+      }
+
+      .project-content h3 {
+         font-family: var(--font-display);
+         font-size: 1.1rem;
+         font-weight: 600;
+         margin-bottom: 0.5rem;
+      }
+
+      .project-content p {
+         font-size: 0.9rem;
+         color: var(--text-dim);
+         margin-bottom: 1rem;
+      }
+
+      .project-tech {
+         display: flex;
+         gap: 0.5rem;
+         flex-wrap: wrap;
+      }
+
+      .project-tech span {
+         font-family: var(--font-mono);
+         font-size: 0.7rem;
+         color: var(--text-faint);
+         padding: 0.25rem 0.5rem;
+         background: rgba(255,255,255,0.05);
+         border-radius: 4px;
+      }
+
+      /* About */
+      .about-grid {
+         display: grid;
+         grid-template-columns: 2fr 1fr;
+         gap: 4rem;
+      }
+
+      .about-text {
+         font-size: 1.1rem;
+         color: var(--text-dim);
+      }
+
+      .about-text p {
+         margin-bottom: 1.5rem;
+      }
+
+      .about-text strong {
+         color: var(--text);
+      }
+
+      .about-stats {
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 1.5rem;
+      }
+
+      .stat-card {
+         background: var(--bg-card);
+         border: 1px solid rgba(255,255,255,0.06);
+         border-radius: var(--radius);
+         padding: 1.5rem;
+         text-align: center;
+      }
+
+      .stat-value {
+         font-family: var(--font-display);
+         font-size: 2.5rem;
+         font-weight: 800;
+         background: var(--gradient-1);
+         -webkit-background-clip: text;
+         -webkit-text-fill-color: transparent;
+         background-clip: text;
+      }
+
+      .stat-label {
+         font-family: var(--font-mono);
+         font-size: 0.75rem;
+         color: var(--text-faint);
+         text-transform: uppercase;
+         letter-spacing: 0.05em;
+         margin-top: 0.25rem;
+      }
+
+      /* Footer */
+      .footer {
+         padding: 3rem 0;
+         border-top: 1px solid rgba(255,255,255,0.06);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      .footer-copy {
+         font-family: var(--font-mono);
+         font-size: 0.8rem;
+         color: var(--text-faint);
+      }
+
+      .footer-links {
+         display: flex;
+         gap: 1.5rem;
+      }
+
+      .footer-links a {
+         font-family: var(--font-mono);
+         font-size: 0.8rem;
+         color: var(--text-dim);
+         text-decoration: none;
+         transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+         color: var(--accent-1);
+      }
+
+      @media (max-width: 900px) {
+         .hero {
+            grid-template-columns: 1fr;
+            padding: 4rem 0;
+         }
+         .hero-title {
+            font-size: 2.5rem;
+         }
+         .hero-visual {
+            display: none;
+         }
+         .posts-grid {
+            grid-template-columns: 1fr;
+         }
+         .projects-grid {
+            grid-template-columns: 1fr;
+         }
+         .about-grid {
+            grid-template-columns: 1fr;
+         }
+         .nav-links {
+            display: none;
+         }
+      }
+   </style>
+</head>
+<body>
+   <div class="orb orb-1"></div>
+   <div class="orb orb-2"></div>
+   <div class="orb orb-3"></div>
+
+   <div class="container">
+      <nav class="nav">
+         <div class="nav-logo">NICO BAIER</div>
+         <div class="nav-links">
+            <a href="#blog">Blog</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+         </div>
+      </nav>
+
+      <section class="hero">
+         <div class="hero-content">
+            <div class="hero-badge">
+               <span>Available for projects</span>
+            </div>
+            <h1 class="hero-title">
+               Developer &<br><span class="gradient">Linguist</span>
+            </h1>
+            <p class="hero-desc">
+               Chicago-based software engineer with a PhD in Linguistics from UC Berkeley. Building tools at the intersection of language and computation.
+            </p>
+            <div class="hero-buttons">
+               <a href="#projects" class="btn btn-primary">View Projects →</a>
+               <a href="mailto:nico.baier@gmail.com" class="btn btn-secondary">Get in Touch</a>
+            </div>
+         </div>
+         <div class="hero-visual">
+            <div class="code-window code-window-1">
+               <div class="code-header">
+                  <div class="code-dot"></div>
+                  <div class="code-dot"></div>
+                  <div class="code-dot"></div>
+                  <div class="code-title">morphology.ts</div>
+               </div>
+               <div class="code-body">
+                  <div class="code-line"><span class="code-num">1</span><span class="code-keyword">interface</span> <span class="code-func">Morpheme</span> {</div>
+                  <div class="code-line"><span class="code-num">2</span>&nbsp;&nbsp;root: <span class="code-string">string</span>;</div>
+                  <div class="code-line"><span class="code-num">3</span>&nbsp;&nbsp;affixes: <span class="code-func">Affix</span>[];</div>
+                  <div class="code-line"><span class="code-num">4</span>&nbsp;&nbsp;features: <span class="code-func">FeatureBundle</span>;</div>
+                  <div class="code-line"><span class="code-num">5</span>}</div>
+                  <div class="code-line"><span class="code-num">6</span></div>
+                  <div class="code-line"><span class="code-num">7</span><span class="code-comment">// Parse morphological structure</span></div>
+                  <div class="code-line"><span class="code-num">8</span><span class="code-keyword">export const</span> <span class="code-func">analyze</span> = ...</div>
+               </div>
+            </div>
+            <div class="code-window code-window-2">
+               <div class="code-header">
+                  <div class="code-dot"></div>
+                  <div class="code-dot"></div>
+                  <div class="code-dot"></div>
+                  <div class="code-title">syntax.ts</div>
+               </div>
+               <div class="code-body">
+                  <div class="code-line"><span class="code-num">1</span><span class="code-keyword">type</span> <span class="code-func">PhrasalNode</span> = ...</div>
+               </div>
+            </div>
+            <div class="code-window code-window-3">
+               <div class="code-header">
+                  <div class="code-dot"></div>
+                  <div class="code-dot"></div>
+                  <div class="code-dot"></div>
+                  <div class="code-title">parser.ts</div>
+               </div>
+               <div class="code-body">
+                  <div class="code-line"><span class="code-num">1</span><span class="code-keyword">import</span> ...</div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <section class="section" id="blog">
+         <header class="section-header">
+            <h2 class="section-title">Latest Posts</h2>
+            <a href="#" class="section-link">View all posts →</a>
+         </header>
+         <div class="posts-grid">
+            <a href="#" class="post-card">
+               <span class="post-tag">IndieWeb</span>
+               <h3 class="post-title">Building a Micropub Server from Scratch</h3>
+               <p class="post-excerpt">A deep dive into implementing the IndieWeb Micropub specification for content publishing.</p>
+               <div class="post-meta">
+                  <span>Jan 15, 2025</span>
+                  <span>8 min read</span>
+               </div>
+            </a>
+            <a href="#" class="post-card">
+               <span class="post-tag">Linguistics</span>
+               <h3 class="post-title">Why I Still Think About Syntax Trees</h3>
+               <p class="post-excerpt">How studying phrase structure changed how I think about abstract syntax trees.</p>
+               <div class="post-meta">
+                  <span>Jan 8, 2025</span>
+                  <span>6 min read</span>
+               </div>
+            </a>
+            <a href="#" class="post-card">
+               <span class="post-tag">Tools</span>
+               <h3 class="post-title">Val Town: Serverless for the Rest of Us</h3>
+               <p class="post-excerpt">Discovering the joy of quick deployments and collaborative code snippets.</p>
+               <div class="post-meta">
+                  <span>Dec 22, 2024</span>
+                  <span>5 min read</span>
+               </div>
+            </a>
+         </div>
+      </section>
+
+      <section class="section" id="projects">
+         <header class="section-header">
+            <h2 class="section-title">Projects</h2>
+            <a href="https://github.com/nbbaier" class="section-link">View on GitHub →</a>
+         </header>
+         <div class="projects-grid">
+            <a href="#" class="project-card">
+               <div class="project-icon">🔬</div>
+               <div class="project-content">
+                  <h3>Morphology Parser</h3>
+                  <p>Rule-based morphological analyzer for field linguistics research</p>
+                  <div class="project-tech">
+                     <span>Python</span>
+                     <span>NLP</span>
+                     <span>CLI</span>
+                  </div>
+               </div>
+            </a>
+            <a href="#" class="project-card">
+               <div class="project-icon">⚡</div>
+               <div class="project-content">
+                  <h3>Val Town Experiments</h3>
+                  <p>Collection of serverless functions and API experiments</p>
+                  <div class="project-tech">
+                     <span>TypeScript</span>
+                     <span>Deno</span>
+                     <span>API</span>
+                  </div>
+               </div>
+            </a>
+            <a href="#" class="project-card">
+               <div class="project-icon">🎨</div>
+               <div class="project-content">
+                  <h3>Syntax Highlighter</h3>
+                  <p>Custom syntax highlighting for linguistic notation</p>
+                  <div class="project-tech">
+                     <span>JavaScript</span>
+                     <span>TextMate</span>
+                  </div>
+               </div>
+            </a>
+            <a href="#" class="project-card">
+               <div class="project-icon">📝</div>
+               <div class="project-content">
+                  <h3>Micropub Server</h3>
+                  <p>IndieWeb-compatible publishing endpoint for this site</p>
+                  <div class="project-tech">
+                     <span>TypeScript</span>
+                     <span>IndieWeb</span>
+                  </div>
+               </div>
+            </a>
+         </div>
+      </section>
+
+      <section class="section" id="about">
+         <header class="section-header">
+            <h2 class="section-title">About</h2>
+         </header>
+         <div class="about-grid">
+            <div class="about-text">
+               <p>I'm a <strong>Chicago-based software engineer</strong> with a background in theoretical linguistics. My academic work focused on <strong>syntax, morphology, and typology</strong>—particularly the morphosyntax of Ā-dependencies across the world's languages.</p>
+               <p>Previously, I was a postdoctoral researcher at <strong>UBC</strong> and <strong>McGill University</strong>. I've conducted fieldwork on Seereer and Noon in Senegal, and contributed to documentation projects for Karuk and Montana Salish.</p>
+               <p>Now I build tools and explore how <strong>computational thinking can illuminate language structure</strong>—and how linguistic theory can inform better software design.</p>
+            </div>
+            <div class="about-stats">
+               <div class="stat-card">
+                  <div class="stat-value">63</div>
+                  <div class="stat-label">Languages Studied</div>
+               </div>
+               <div class="stat-card">
+                  <div class="stat-value">15+</div>
+                  <div class="stat-label">Publications</div>
+               </div>
+               <div class="stat-card">
+                  <div class="stat-value">PhD</div>
+                  <div class="stat-label">UC Berkeley</div>
+               </div>
+               <div class="stat-card">
+                  <div class="stat-value">3</div>
+                  <div class="stat-label">Universities</div>
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <footer class="footer">
+         <div class="footer-copy">© 2025 Nico Baier</div>
+         <div class="footer-links">
+            <a href="https://github.com/nbbaier">GitHub</a>
+            <a href="https://val.town/u/nbbaier">Val Town</a>
+            <a href="https://linkedin.com/in/nicobaier">LinkedIn</a>
+            <a href="https://bsky.app/profile/nicobaier.com">Bluesky</a>
+         </div>
+      </footer>
+   </div>
+</body>
+</html>

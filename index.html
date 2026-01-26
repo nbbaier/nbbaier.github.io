@@ -52,6 +52,16 @@
             ]
          }
       </script>
+
+   <script>
+      (() => {
+         var script = document.createElement('script');
+         script.async = true;
+         script.src = 'https://nbbaier-counter-town.val.run/trackingScript';
+         var firstScript = document.getElementsByTagName('script')[0];
+         firstScript.parentNode.insertBefore(script, firstScript);
+      })();
+   </script>
 </head>
 
 <body>

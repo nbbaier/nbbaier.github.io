@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <title>nico@baier ~ $</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="description" content="Nico Baier - Developer and Linguist" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+   <style>
+      :root {
+         --bg-primary: #0a0e14;
+         --bg-secondary: #0d1117;
+         --bg-tertiary: #161b22;
+         --text-primary: #e6edf3;
+         --text-secondary: #8b949e;
+         --text-muted: #484f58;
+         --accent-green: #3fb950;
+         --accent-cyan: #58a6ff;
+         --accent-yellow: #d29922;
+         --accent-purple: #a371f7;
+         --accent-red: #f85149;
+         --border: #30363d;
+         --font-mono: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html {
+         font-size: 15px;
+         scrollbar-width: thin;
+         scrollbar-color: var(--accent-green) var(--bg-secondary);
+      }
+
+      body {
+         font-family: var(--font-mono);
+         background: var(--bg-primary);
+         color: var(--text-primary);
+         line-height: 1.6;
+         min-height: 100vh;
+         overflow-x: hidden;
+      }
+
+      /* Scanline effect */
+      body::before {
+         content: '';
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         pointer-events: none;
+         background: repeating-linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.1) 0px,
+            rgba(0, 0, 0, 0.1) 1px,
+            transparent 1px,
+            transparent 2px
+         );
+         z-index: 1000;
+         opacity: 0.3;
+      }
+
+      /* Glow effect around terminal */
+      .terminal-wrapper {
+         max-width: 1000px;
+         margin: 2rem auto;
+         padding: 0 1rem;
+         position: relative;
+      }
+
+      .terminal {
+         background: var(--bg-secondary);
+         border: 1px solid var(--border);
+         border-radius: 8px;
+         overflow: hidden;
+         box-shadow:
+            0 0 0 1px rgba(63, 185, 80, 0.1),
+            0 0 40px rgba(63, 185, 80, 0.05),
+            0 20px 60px rgba(0, 0, 0, 0.5);
+      }
+
+      .terminal-header {
+         background: var(--bg-tertiary);
+         padding: 0.75rem 1rem;
+         display: flex;
+         align-items: center;
+         gap: 0.5rem;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .terminal-btn {
+         width: 12px;
+         height: 12px;
+         border-radius: 50%;
+      }
+      .terminal-btn.close { background: var(--accent-red); }
+      .terminal-btn.min { background: var(--accent-yellow); }
+      .terminal-btn.max { background: var(--accent-green); }
+
+      .terminal-title {
+         flex: 1;
+         text-align: center;
+         color: var(--text-secondary);
+         font-size: 0.8rem;
+      }
+
+      .terminal-body {
+         padding: 1.5rem;
+      }
+
+      /* ASCII Art Header */
+      .ascii-header {
+         color: var(--accent-green);
+         font-size: 0.65rem;
+         line-height: 1.2;
+         margin-bottom: 1.5rem;
+         white-space: pre;
+         overflow-x: auto;
+      }
+
+      /* Command prompt style */
+      .prompt {
+         display: flex;
+         gap: 0.5rem;
+         margin-bottom: 0.5rem;
+         flex-wrap: wrap;
+      }
+
+      .prompt-user {
+         color: var(--accent-cyan);
+      }
+
+      .prompt-at {
+         color: var(--text-muted);
+      }
+
+      .prompt-host {
+         color: var(--accent-purple);
+      }
+
+      .prompt-dir {
+         color: var(--accent-yellow);
+      }
+
+      .prompt-symbol {
+         color: var(--accent-green);
+      }
+
+      .prompt-cmd {
+         color: var(--text-primary);
+      }
+
+      /* Output sections */
+      .output {
+         margin: 1rem 0 2rem 0;
+         padding-left: 1rem;
+         border-left: 2px solid var(--border);
+      }
+
+      .output-header {
+         color: var(--accent-yellow);
+         font-weight: 600;
+         margin-bottom: 0.75rem;
+         display: flex;
+         align-items: center;
+         gap: 0.5rem;
+      }
+
+      .output-header::before {
+         content: '▸';
+         color: var(--accent-green);
+      }
+
+      .output p {
+         color: var(--text-secondary);
+         margin-bottom: 0.75rem;
+      }
+
+      /* Navigation as commands */
+      .nav-section {
+         margin: 2rem 0;
+      }
+
+      .nav-grid {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+         gap: 1rem;
+         margin-top: 1rem;
+      }
+
+      .nav-item {
+         background: var(--bg-tertiary);
+         border: 1px solid var(--border);
+         border-radius: 4px;
+         padding: 1rem;
+         cursor: pointer;
+         transition: all 0.2s ease;
+         text-decoration: none;
+         display: block;
+      }
+
+      .nav-item:hover {
+         border-color: var(--accent-green);
+         box-shadow: 0 0 20px rgba(63, 185, 80, 0.1);
+         transform: translateY(-2px);
+      }
+
+      .nav-item-cmd {
+         color: var(--accent-cyan);
+         font-size: 0.85rem;
+         margin-bottom: 0.25rem;
+      }
+
+      .nav-item-desc {
+         color: var(--text-muted);
+         font-size: 0.75rem;
+      }
+
+      /* Projects/Code section */
+      .project-list {
+         margin-top: 1rem;
+      }
+
+      .project {
+         background: var(--bg-tertiary);
+         border: 1px solid var(--border);
+         border-radius: 4px;
+         padding: 1rem;
+         margin-bottom: 0.75rem;
+         transition: border-color 0.2s;
+      }
+
+      .project:hover {
+         border-color: var(--accent-cyan);
+      }
+
+      .project-name {
+         color: var(--accent-cyan);
+         font-weight: 500;
+         display: flex;
+         align-items: center;
+         gap: 0.5rem;
+      }
+
+      .project-name::before {
+         content: '📁';
+         font-size: 0.9rem;
+      }
+
+      .project-lang {
+         font-size: 0.7rem;
+         padding: 0.15rem 0.5rem;
+         border-radius: 3px;
+         background: var(--bg-primary);
+         color: var(--accent-yellow);
+         margin-left: auto;
+      }
+
+      .project-desc {
+         color: var(--text-muted);
+         font-size: 0.8rem;
+         margin-top: 0.5rem;
+      }
+
+      .project-stats {
+         display: flex;
+         gap: 1rem;
+         margin-top: 0.5rem;
+         font-size: 0.75rem;
+         color: var(--text-muted);
+      }
+
+      .project-stats span {
+         display: flex;
+         align-items: center;
+         gap: 0.25rem;
+      }
+
+      /* Blog/Logs section */
+      .log-entry {
+         padding: 0.75rem 0;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .log-entry:last-child {
+         border-bottom: none;
+      }
+
+      .log-date {
+         color: var(--text-muted);
+         font-size: 0.75rem;
+      }
+
+      .log-title {
+         color: var(--text-primary);
+         text-decoration: none;
+         display: block;
+         margin: 0.25rem 0;
+      }
+
+      .log-title:hover {
+         color: var(--accent-cyan);
+      }
+
+      .log-tags {
+         display: flex;
+         gap: 0.5rem;
+         flex-wrap: wrap;
+      }
+
+      .log-tag {
+         font-size: 0.7rem;
+         color: var(--accent-purple);
+      }
+
+      .log-tag::before {
+         content: '#';
+      }
+
+      /* Links */
+      a {
+         color: var(--accent-cyan);
+         text-decoration: none;
+      }
+
+      a:hover {
+         text-decoration: underline;
+      }
+
+      /* Footer */
+      .footer {
+         margin-top: 2rem;
+         padding-top: 1rem;
+         border-top: 1px solid var(--border);
+         color: var(--text-muted);
+         font-size: 0.75rem;
+         display: flex;
+         justify-content: space-between;
+         flex-wrap: wrap;
+         gap: 1rem;
+      }
+
+      .footer-links {
+         display: flex;
+         gap: 1rem;
+      }
+
+      /* Cursor blink */
+      .cursor {
+         display: inline-block;
+         width: 0.6rem;
+         height: 1.1rem;
+         background: var(--accent-green);
+         animation: blink 1s step-end infinite;
+         vertical-align: middle;
+         margin-left: 0.25rem;
+      }
+
+      @keyframes blink {
+         50% { opacity: 0; }
+      }
+
+      /* Typing animation for header */
+      .typing {
+         overflow: hidden;
+         white-space: nowrap;
+         animation: typing 0.8s steps(20);
+      }
+
+      @keyframes typing {
+         from { width: 0; }
+         to { width: 100%; }
+      }
+
+      @media (max-width: 600px) {
+         .ascii-header {
+            font-size: 0.4rem;
+         }
+         .terminal-body {
+            padding: 1rem;
+         }
+         .nav-grid {
+            grid-template-columns: 1fr;
+         }
+      }
+   </style>
+</head>
+<body>
+   <div class="terminal-wrapper">
+      <div class="terminal">
+         <div class="terminal-header">
+            <div class="terminal-btn close"></div>
+            <div class="terminal-btn min"></div>
+            <div class="terminal-btn max"></div>
+            <div class="terminal-title">nico@baier: ~</div>
+         </div>
+         <div class="terminal-body">
+            <pre class="ascii-header">
+ ███╗   ██╗██╗ ██████╗ ██████╗     ██████╗  █████╗ ██╗███████╗██████╗
+ ████╗  ██║██║██╔════╝██╔═══██╗    ██╔══██╗██╔══██╗██║██╔════╝██╔══██╗
+ ██╔██╗ ██║██║██║     ██║   ██║    ██████╔╝███████║██║█████╗  ██████╔╝
+ ██║╚██╗██║██║██║     ██║   ██║    ██╔══██╗██╔══██║██║██╔══╝  ██╔══██╗
+ ██║ ╚████║██║╚██████╗╚██████╔╝    ██████╔╝██║  ██║██║███████╗██║  ██║
+ ╚═╝  ╚═══╝╚═╝ ╚═════╝ ╚═════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚══════╝╚═╝  ╚═╝
+            </pre>
+
+            <div class="prompt">
+               <span class="prompt-user">nico</span><span class="prompt-at">@</span><span class="prompt-host">baier</span>
+               <span class="prompt-dir">~</span>
+               <span class="prompt-symbol">$</span>
+               <span class="prompt-cmd typing">whoami</span>
+            </div>
+
+            <div class="output">
+               <div class="output-header">Developer & Linguist</div>
+               <p>Chicago-based software engineer with a PhD in Linguistics from UC Berkeley. I build tools and explore the intersection of language and computation.</p>
+               <p>Previously: Postdoc @ UBC, McGill. Research in syntax, morphology, and typology.</p>
+            </div>
+
+            <div class="prompt">
+               <span class="prompt-user">nico</span><span class="prompt-at">@</span><span class="prompt-host">baier</span>
+               <span class="prompt-dir">~</span>
+               <span class="prompt-symbol">$</span>
+               <span class="prompt-cmd">ls -la ./sections/</span>
+            </div>
+
+            <div class="nav-section">
+               <div class="nav-grid">
+                  <a href="#projects" class="nav-item">
+                     <div class="nav-item-cmd">cd ./projects</div>
+                     <div class="nav-item-desc">Code repositories & experiments</div>
+                  </a>
+                  <a href="#blog" class="nav-item">
+                     <div class="nav-item-cmd">cat ./logs/*</div>
+                     <div class="nav-item-desc">Writing & thoughts</div>
+                  </a>
+                  <a href="#research" class="nav-item">
+                     <div class="nav-item-cmd">grep -r "linguistics"</div>
+                     <div class="nav-item-desc">Academic papers & research</div>
+                  </a>
+                  <a href="#contact" class="nav-item">
+                     <div class="nav-item-cmd">echo $CONTACT</div>
+                     <div class="nav-item-desc">Get in touch</div>
+                  </a>
+               </div>
+            </div>
+
+            <div class="prompt" id="projects">
+               <span class="prompt-user">nico</span><span class="prompt-at">@</span><span class="prompt-host">baier</span>
+               <span class="prompt-dir">~/projects</span>
+               <span class="prompt-symbol">$</span>
+               <span class="prompt-cmd">tree --dirsfirst</span>
+            </div>
+
+            <div class="output">
+               <div class="output-header">Projects</div>
+               <div class="project-list">
+                  <div class="project">
+                     <div class="project-name">
+                        val-town-experiments
+                        <span class="project-lang">TypeScript</span>
+                     </div>
+                     <div class="project-desc">Collection of serverless functions and API experiments on Val Town</div>
+                     <div class="project-stats">
+                        <span>⭐ 24</span>
+                        <span>🍴 8</span>
+                     </div>
+                  </div>
+                  <div class="project">
+                     <div class="project-name">
+                        syntax-highlighter
+                        <span class="project-lang">JavaScript</span>
+                     </div>
+                     <div class="project-desc">Custom syntax highlighting for linguistic notation</div>
+                     <div class="project-stats">
+                        <span>⭐ 12</span>
+                        <span>🍴 3</span>
+                     </div>
+                  </div>
+                  <div class="project">
+                     <div class="project-name">
+                        morphology-parser
+                        <span class="project-lang">Python</span>
+                     </div>
+                     <div class="project-desc">Rule-based morphological analyzer for field linguistics</div>
+                     <div class="project-stats">
+                        <span>⭐ 45</span>
+                        <span>🍴 11</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="prompt" id="blog">
+               <span class="prompt-user">nico</span><span class="prompt-at">@</span><span class="prompt-host">baier</span>
+               <span class="prompt-dir">~/logs</span>
+               <span class="prompt-symbol">$</span>
+               <span class="prompt-cmd">tail -n 5 ./recent.log</span>
+            </div>
+
+            <div class="output">
+               <div class="output-header">Recent Logs</div>
+               <div class="log-entry">
+                  <div class="log-date">[2025-01-15 14:32:01]</div>
+                  <a href="#" class="log-title">Building a Micropub Server from Scratch</a>
+                  <div class="log-tags">
+                     <span class="log-tag">indieweb</span>
+                     <span class="log-tag">typescript</span>
+                     <span class="log-tag">api</span>
+                  </div>
+               </div>
+               <div class="log-entry">
+                  <div class="log-date">[2025-01-08 09:15:43]</div>
+                  <a href="#" class="log-title">Why I Still Think About Syntax Trees</a>
+                  <div class="log-tags">
+                     <span class="log-tag">linguistics</span>
+                     <span class="log-tag">programming</span>
+                  </div>
+               </div>
+               <div class="log-entry">
+                  <div class="log-date">[2024-12-22 16:48:22]</div>
+                  <a href="#" class="log-title">Val Town: Serverless for the Rest of Us</a>
+                  <div class="log-tags">
+                     <span class="log-tag">valtown</span>
+                     <span class="log-tag">serverless</span>
+                  </div>
+               </div>
+            </div>
+
+            <div class="footer">
+               <div>Last login: Thu Jan 22 2026 from 127.0.0.1</div>
+               <div class="footer-links">
+                  <a href="https://github.com/nbbaier">github</a>
+                  <a href="https://val.town/u/nbbaier">val.town</a>
+                  <a href="mailto:nico.baier@gmail.com">email</a>
+               </div>
+            </div>
+
+            <div class="prompt" style="margin-top: 1rem;">
+               <span class="prompt-user">nico</span><span class="prompt-at">@</span><span class="prompt-host">baier</span>
+               <span class="prompt-dir">~</span>
+               <span class="prompt-symbol">$</span>
+               <span class="cursor"></span>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

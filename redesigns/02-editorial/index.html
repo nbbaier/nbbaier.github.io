@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <title>Nico Baier — Developer & Linguist</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="description" content="Nico Baier - Developer and Linguist" />
+   <link rel="preconnect" href="https://fonts.googleapis.com" />
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+   <style>
+      :root {
+         --bg: #f8f6f1;
+         --bg-card: #ffffff;
+         --text-primary: #1a1a1a;
+         --text-secondary: #4a4a4a;
+         --text-muted: #888;
+         --accent: #c41e3a;
+         --accent-light: #fef2f4;
+         --border: #e5e0d8;
+         --font-display: 'Playfair Display', Georgia, serif;
+         --font-body: 'Source Serif 4', Georgia, serif;
+         --font-sans: 'DM Sans', -apple-system, sans-serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { font-size: 17px; scroll-behavior: smooth; }
+
+      body {
+         font-family: var(--font-body);
+         background: var(--bg);
+         color: var(--text-primary);
+         line-height: 1.7;
+         min-height: 100vh;
+      }
+
+      /* Masthead */
+      .masthead {
+         border-bottom: 1px solid var(--border);
+         padding: 1rem 2rem;
+         position: sticky;
+         top: 0;
+         background: var(--bg);
+         z-index: 100;
+      }
+
+      .masthead-inner {
+         max-width: 1400px;
+         margin: 0 auto;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+      }
+
+      .masthead-date {
+         font-family: var(--font-sans);
+         font-size: 0.75rem;
+         color: var(--text-muted);
+         letter-spacing: 0.1em;
+         text-transform: uppercase;
+      }
+
+      .masthead-logo {
+         font-family: var(--font-display);
+         font-size: 1.5rem;
+         font-weight: 500;
+         letter-spacing: -0.02em;
+      }
+
+      .masthead-nav {
+         display: flex;
+         gap: 2rem;
+         font-family: var(--font-sans);
+         font-size: 0.85rem;
+      }
+
+      .masthead-nav a {
+         color: var(--text-secondary);
+         text-decoration: none;
+         transition: color 0.2s;
+      }
+
+      .masthead-nav a:hover {
+         color: var(--accent);
+      }
+
+      /* Hero */
+      .hero {
+         max-width: 1400px;
+         margin: 0 auto;
+         padding: 4rem 2rem;
+         display: grid;
+         grid-template-columns: 1fr 1fr;
+         gap: 4rem;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .hero-main {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+      }
+
+      .hero-label {
+         font-family: var(--font-sans);
+         font-size: 0.7rem;
+         color: var(--accent);
+         text-transform: uppercase;
+         letter-spacing: 0.15em;
+         font-weight: 600;
+         margin-bottom: 1rem;
+      }
+
+      .hero-title {
+         font-family: var(--font-display);
+         font-size: 3.5rem;
+         font-weight: 400;
+         line-height: 1.1;
+         margin-bottom: 1.5rem;
+         letter-spacing: -0.02em;
+      }
+
+      .hero-subtitle {
+         font-size: 1.25rem;
+         color: var(--text-secondary);
+         font-style: italic;
+         margin-bottom: 2rem;
+      }
+
+      .hero-meta {
+         font-family: var(--font-sans);
+         font-size: 0.85rem;
+         color: var(--text-muted);
+         display: flex;
+         gap: 1.5rem;
+      }
+
+      .hero-meta a {
+         color: var(--text-secondary);
+         text-decoration: none;
+         border-bottom: 1px solid var(--border);
+         padding-bottom: 2px;
+         transition: all 0.2s;
+      }
+
+      .hero-meta a:hover {
+         color: var(--accent);
+         border-color: var(--accent);
+      }
+
+      .hero-image {
+         position: relative;
+         background: linear-gradient(135deg, var(--accent-light) 0%, #fff 100%);
+         border-radius: 2px;
+         overflow: hidden;
+         aspect-ratio: 4/5;
+      }
+
+      .hero-image::before {
+         content: '';
+         position: absolute;
+         inset: 20px;
+         border: 1px solid var(--accent);
+         opacity: 0.3;
+      }
+
+      .hero-image-text {
+         position: absolute;
+         bottom: 2rem;
+         left: 2rem;
+         right: 2rem;
+         font-family: var(--font-display);
+         font-size: 1.5rem;
+         font-style: italic;
+         color: var(--text-secondary);
+         line-height: 1.4;
+      }
+
+      /* Main content */
+      .main {
+         max-width: 1400px;
+         margin: 0 auto;
+         padding: 3rem 2rem;
+         display: grid;
+         grid-template-columns: 2fr 1fr;
+         gap: 4rem;
+      }
+
+      /* Section headers */
+      .section-header {
+         display: flex;
+         align-items: center;
+         gap: 1rem;
+         margin-bottom: 2rem;
+         padding-bottom: 0.5rem;
+         border-bottom: 2px solid var(--text-primary);
+      }
+
+      .section-title {
+         font-family: var(--font-display);
+         font-size: 1.5rem;
+         font-weight: 500;
+      }
+
+      .section-count {
+         font-family: var(--font-sans);
+         font-size: 0.7rem;
+         color: var(--text-muted);
+         margin-left: auto;
+      }
+
+      /* Blog posts - editorial style */
+      .posts {
+         display: grid;
+         gap: 2rem;
+      }
+
+      .post {
+         display: grid;
+         grid-template-columns: 1fr 2fr;
+         gap: 1.5rem;
+         padding-bottom: 2rem;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .post:last-child {
+         border-bottom: none;
+      }
+
+      .post-image {
+         aspect-ratio: 4/3;
+         background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+         border-radius: 2px;
+         position: relative;
+         overflow: hidden;
+      }
+
+      .post-image::after {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: linear-gradient(45deg, transparent 40%, rgba(196, 30, 58, 0.05) 100%);
+      }
+
+      .post-content {
+         display: flex;
+         flex-direction: column;
+      }
+
+      .post-category {
+         font-family: var(--font-sans);
+         font-size: 0.7rem;
+         color: var(--accent);
+         text-transform: uppercase;
+         letter-spacing: 0.1em;
+         font-weight: 600;
+         margin-bottom: 0.5rem;
+      }
+
+      .post-title {
+         font-family: var(--font-display);
+         font-size: 1.5rem;
+         font-weight: 500;
+         line-height: 1.3;
+         margin-bottom: 0.75rem;
+         text-decoration: none;
+         color: inherit;
+         transition: color 0.2s;
+      }
+
+      .post-title:hover {
+         color: var(--accent);
+      }
+
+      .post-excerpt {
+         color: var(--text-secondary);
+         font-size: 0.95rem;
+         flex: 1;
+      }
+
+      .post-meta {
+         font-family: var(--font-sans);
+         font-size: 0.8rem;
+         color: var(--text-muted);
+         margin-top: 1rem;
+      }
+
+      /* Sidebar */
+      .sidebar {
+         position: sticky;
+         top: 6rem;
+         height: fit-content;
+      }
+
+      /* Projects widget */
+      .widget {
+         margin-bottom: 3rem;
+      }
+
+      .widget-header {
+         font-family: var(--font-display);
+         font-size: 1rem;
+         font-weight: 600;
+         margin-bottom: 1rem;
+         padding-bottom: 0.5rem;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .project-item {
+         padding: 1rem 0;
+         border-bottom: 1px solid var(--border);
+      }
+
+      .project-item:last-child {
+         border-bottom: none;
+      }
+
+      .project-name {
+         font-family: var(--font-sans);
+         font-weight: 600;
+         font-size: 0.9rem;
+         margin-bottom: 0.25rem;
+         text-decoration: none;
+         color: inherit;
+         display: block;
+      }
+
+      .project-name:hover {
+         color: var(--accent);
+      }
+
+      .project-desc {
+         font-size: 0.85rem;
+         color: var(--text-muted);
+      }
+
+      .project-tech {
+         font-family: var(--font-sans);
+         font-size: 0.7rem;
+         color: var(--accent);
+         margin-top: 0.5rem;
+      }
+
+      /* Newsletter widget */
+      .newsletter {
+         background: var(--bg-card);
+         padding: 1.5rem;
+         border: 1px solid var(--border);
+      }
+
+      .newsletter-title {
+         font-family: var(--font-display);
+         font-size: 1.1rem;
+         margin-bottom: 0.5rem;
+      }
+
+      .newsletter-desc {
+         font-size: 0.85rem;
+         color: var(--text-muted);
+         margin-bottom: 1rem;
+      }
+
+      .newsletter-form {
+         display: flex;
+         gap: 0.5rem;
+      }
+
+      .newsletter-input {
+         flex: 1;
+         padding: 0.75rem;
+         border: 1px solid var(--border);
+         font-family: var(--font-sans);
+         font-size: 0.85rem;
+      }
+
+      .newsletter-btn {
+         padding: 0.75rem 1rem;
+         background: var(--text-primary);
+         color: white;
+         border: none;
+         font-family: var(--font-sans);
+         font-size: 0.8rem;
+         cursor: pointer;
+         transition: background 0.2s;
+      }
+
+      .newsletter-btn:hover {
+         background: var(--accent);
+      }
+
+      /* Footer */
+      .footer {
+         max-width: 1400px;
+         margin: 0 auto;
+         padding: 3rem 2rem;
+         border-top: 1px solid var(--border);
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         font-family: var(--font-sans);
+         font-size: 0.85rem;
+         color: var(--text-muted);
+      }
+
+      .footer-links {
+         display: flex;
+         gap: 2rem;
+      }
+
+      .footer-links a {
+         color: var(--text-secondary);
+         text-decoration: none;
+      }
+
+      .footer-links a:hover {
+         color: var(--accent);
+      }
+
+      @media (max-width: 900px) {
+         .hero {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            padding: 2rem;
+         }
+         .hero-title {
+            font-size: 2.5rem;
+         }
+         .hero-image {
+            aspect-ratio: 16/9;
+         }
+         .main {
+            grid-template-columns: 1fr;
+            padding: 2rem;
+         }
+         .post {
+            grid-template-columns: 1fr;
+         }
+         .masthead-date { display: none; }
+         .masthead-nav { gap: 1rem; }
+      }
+   </style>
+</head>
+<body>
+   <header class="masthead">
+      <div class="masthead-inner">
+         <div class="masthead-date">Chicago, Illinois</div>
+         <div class="masthead-logo">Nico Baier</div>
+         <nav class="masthead-nav">
+            <a href="#writing">Writing</a>
+            <a href="#code">Code</a>
+            <a href="#research">Research</a>
+            <a href="#about">About</a>
+         </nav>
+      </div>
+   </header>
+
+   <section class="hero">
+      <div class="hero-main">
+         <div class="hero-label">Developer & Linguist</div>
+         <h1 class="hero-title">Exploring language through code, syntax through software</h1>
+         <p class="hero-subtitle">Building tools at the intersection of linguistics and technology. PhD in Linguistics, UC Berkeley.</p>
+         <div class="hero-meta">
+            <a href="https://github.com/nbbaier">GitHub</a>
+            <a href="https://val.town/u/nbbaier">Val Town</a>
+            <a href="mailto:nico.baier@gmail.com">Contact</a>
+         </div>
+      </div>
+      <div class="hero-image">
+         <div class="hero-image-text">"The limits of my language mean the limits of my world."<br>— Wittgenstein</div>
+      </div>
+   </section>
+
+   <main class="main">
+      <div class="content">
+         <header class="section-header">
+            <h2 class="section-title">Recent Writing</h2>
+            <span class="section-count">12 articles</span>
+         </header>
+
+         <div class="posts">
+            <article class="post">
+               <div class="post-image"></div>
+               <div class="post-content">
+                  <span class="post-category">Technology</span>
+                  <a href="#" class="post-title">Building a Micropub Server from Scratch</a>
+                  <p class="post-excerpt">A deep dive into implementing the IndieWeb Micropub specification, from authentication flows to content storage strategies.</p>
+                  <div class="post-meta">January 15, 2025 · 8 min read</div>
+               </div>
+            </article>
+
+            <article class="post">
+               <div class="post-image"></div>
+               <div class="post-content">
+                  <span class="post-category">Linguistics × Code</span>
+                  <a href="#" class="post-title">Why I Still Think About Syntax Trees</a>
+                  <p class="post-excerpt">How studying phrase structure in natural language changed how I think about abstract syntax trees in programming.</p>
+                  <div class="post-meta">January 8, 2025 · 6 min read</div>
+               </div>
+            </article>
+
+            <article class="post">
+               <div class="post-image"></div>
+               <div class="post-content">
+                  <span class="post-category">Tools</span>
+                  <a href="#" class="post-title">Val Town: Serverless for the Rest of Us</a>
+                  <p class="post-excerpt">Discovering the joy of quick deployments and collaborative code snippets on Val Town's platform.</p>
+                  <div class="post-meta">December 22, 2024 · 5 min read</div>
+               </div>
+            </article>
+         </div>
+      </div>
+
+      <aside class="sidebar">
+         <div class="widget">
+            <h3 class="widget-header">Featured Projects</h3>
+            <div class="project-item">
+               <a href="#" class="project-name">Morphology Parser</a>
+               <p class="project-desc">Rule-based morphological analyzer for field linguistics</p>
+               <div class="project-tech">Python · NLP</div>
+            </div>
+            <div class="project-item">
+               <a href="#" class="project-name">Syntax Highlighter</a>
+               <p class="project-desc">Custom highlighting for linguistic notation</p>
+               <div class="project-tech">JavaScript · TextMate</div>
+            </div>
+            <div class="project-item">
+               <a href="#" class="project-name">Val Town Experiments</a>
+               <p class="project-desc">Serverless functions and API experiments</p>
+               <div class="project-tech">TypeScript · Deno</div>
+            </div>
+         </div>
+
+         <div class="widget newsletter">
+            <h3 class="newsletter-title">Subscribe</h3>
+            <p class="newsletter-desc">Occasional updates on linguistics, code, and everything in between.</p>
+            <form class="newsletter-form">
+               <input type="email" class="newsletter-input" placeholder="your@email.com">
+               <button type="submit" class="newsletter-btn">Join</button>
+            </form>
+         </div>
+      </aside>
+   </main>
+
+   <footer class="footer">
+      <div>© 2025 Nico Baier</div>
+      <div class="footer-links">
+         <a href="https://github.com/nbbaier">GitHub</a>
+         <a href="https://linkedin.com/in/nicobaier">LinkedIn</a>
+         <a href="https://bsky.app/profile/nicobaier.com">Bluesky</a>
+      </div>
+   </footer>
+</body>
+</html>
