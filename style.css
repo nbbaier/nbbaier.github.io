@@ -18,6 +18,25 @@
    --text-base: 1rem; /* 16px — body */
    --text-md: 1.25rem; /* 20px — section titles */
    --text-lg: 2rem; /* 32px — page title */
+
+   --font-variation-mono-meta: "MONO" 1, "CASL" 0;
+
+   --space-inset-page: 1rem;
+   --space-meta-gap: 0.5rem;
+   --space-stack: 1rem;
+   --space-stack-tight: 0.5rem;
+   --space-columns: 2rem;
+   --space-main-top: 1rem;
+   --space-rule-y: 1rem;
+   --space-rule-y-mobile: 0.25rem;
+   --space-floating: 1.25rem;
+
+   --border-header: 2px;
+   --opacity-rule: 0.5;
+
+   --radius-floating: 2rem;
+   --radius-floating-inner: 1rem;
+   --shadow-floating: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 /* Resets from
@@ -78,7 +97,7 @@ h6 {
 body {
    margin-inline: auto;
    max-width: 52rem;
-   padding: 1rem;
+   padding: var(--space-inset-page);
    font-size: var(--text-base);
    font-family: var(--font-primary);
    font-weight: 400;
@@ -88,7 +107,7 @@ body {
 
 /* Header styles */
 header {
-   border-bottom: 2px solid var(--color-border);
+   border-bottom: var(--border-header) solid var(--color-border);
 }
 
 .header-title,
@@ -109,12 +128,10 @@ header {
 
 .header-subtitle {
    display: flex;
-   gap: 0.5rem;
+   gap: var(--space-meta-gap);
    font-size: var(--text-sm);
    font-family: var(--font-mono);
-   font-variation-settings:
-      "MONO" 1,
-      "CASL" 0;
+   font-variation-settings: var(--font-variation-mono-meta);
    color: var(--color-muted);
 }
 
@@ -122,8 +139,8 @@ header {
 main {
    display: grid;
    grid-template-columns: min-content 1fr;
-   column-gap: 2rem;
-   padding-top: 1rem;
+   column-gap: var(--space-columns);
+   padding-top: var(--space-main-top);
 }
 
 /* Section styles */
@@ -136,8 +153,8 @@ section::after {
    grid-column: 1 / -1;
    height: 1px;
    background-color: var(--color-border);
-   opacity: 0.5;
-   margin: 1rem 0;
+   opacity: var(--opacity-rule);
+   margin: var(--space-rule-y) 0;
 }
 
 section:last-child::after {
@@ -155,7 +172,7 @@ section:last-child::after {
 .section-content {
    display: flex;
    flex-direction: column;
-   gap: 1rem;
+   gap: var(--space-stack);
 }
 
 /* Paper title styles */
@@ -166,9 +183,7 @@ section:last-child::after {
 .paper-details {
    font-size: var(--text-sm);
    font-family: var(--font-mono);
-   font-variation-settings:
-      "MONO" 1,
-      "CASL" 0;
+   font-variation-settings: var(--font-variation-mono-meta);
    color: var(--color-muted);
 }
 
@@ -185,11 +200,6 @@ section:last-child::after {
    display: inline-flex;
    align-items: baseline;
    gap: 0.22em;
-}
-
-.abstract-btn-label {
-   /* text-decoration: underline; */
-   text-underline-offset: 0.15em;
 }
 
 .abstract-caret {
@@ -262,20 +272,20 @@ body.typeset-original .paper-details {
 /* Design switcher */
 .design-switcher {
    position: fixed;
-   bottom: 1.25rem;
-   right: 1.25rem;
+   bottom: var(--space-floating);
+   right: var(--space-floating);
    display: flex;
    align-items: center;
-   gap: 0.5rem;
+   gap: var(--space-meta-gap);
    background: var(--color-bg);
    border: 1px solid var(--color-border);
-   border-radius: 2rem;
+   border-radius: var(--radius-floating);
    padding: 0.375rem 0.75rem;
    font-family: var(--font-heading);
    font-size: 0.75rem;
    font-weight: 500;
    color: var(--color-primary);
-   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+   box-shadow: var(--shadow-floating);
    z-index: 1000;
    user-select: none;
 }
@@ -283,7 +293,7 @@ body.typeset-original .paper-details {
 .design-switcher label {
    cursor: pointer;
    padding: 0.25rem 0.5rem;
-   border-radius: 1rem;
+   border-radius: var(--radius-floating-inner);
    transition:
       background-color 0.15s,
       color 0.15s;
@@ -302,7 +312,7 @@ body.typeset-original .paper-details {
 @media (max-width: 768px) {
    main {
       grid-template-columns: 1fr;
-      gap: 0.5rem;
+      gap: var(--space-stack-tight);
    }
 
    .section-title {
@@ -310,6 +320,6 @@ body.typeset-original .paper-details {
    }
 
    section::after {
-      margin: 0.25rem 0;
+      margin: var(--space-rule-y-mobile) 0;
    }
 }
