@@ -20,7 +20,7 @@
    <link rel="preconnect" href="https://fonts.googleapis.com" />
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
    <link rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Recursive:wght@300..1000&display=swap" />
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700&family=Recursive:slnt,wght,CASL,CRSV,MONO@-15..0,400..700,0..1,0..1,0..1&display=swap" />
    <link rel="stylesheet" href="style.css" />
 
    <meta property="og:site_name" content="Nico Baier" />
@@ -156,8 +156,27 @@
                <div class="paper-details">
                   2018 |
                   <a href="https://ling.auf.net/lingbuzz/004545">lingbuzz</a>
+                  |
+                  <button class="abstract-btn paper-details" type="button" aria-expanded="false"
+                     aria-controls="diss-abstract">
+                     <span class="abstract-caret" aria-hidden="true">
+                        <svg class="abstract-caret-svg abstract-caret-svg--hidden" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 640 640" focusable="false">
+                           <title>Abstract</title>
+                           <path fill="currentColor"
+                              d="M439.1 297.4C451.6 309.9 451.6 330.2 439.1 342.7L279.1 502.7C266.6 515.2 246.3 515.2 233.8 502.7C221.3 490.2 221.3 469.9 233.8 457.4L371.2 320L233.9 182.6C221.4 170.1 221.4 149.8 233.9 137.3C246.4 124.8 266.7 124.8 279.2 137.3L439.2 297.3z" />
+                        </svg>
+                        <svg class="abstract-caret-svg abstract-caret-svg--revealed" xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 640 640" focusable="false">
+                           <title>Abstract</title>
+                           <path fill="currentColor"
+                              d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z" />
+                        </svg>
+                     </span>
+                     <span class="abstract-btn-label">abstract</span>
+                  </button>
                </div>
-               <div class="abstract">
+               <div class="abstract" id="diss-abstract" hidden>
                   I investigate the sensitivity of φ-agreement to features
                   typically associated with Ā-extraction, including those
                   related to wh-questioning, relativization, focus and
@@ -374,6 +393,28 @@
          </div>
       </section>
    </main>
+
+   <div class="design-switcher" role="radiogroup" aria-label="Typography style">
+      <label><input type="radio" name="typeset" value="revised" checked>Revised</label>
+      <label><input type="radio" name="typeset" value="original">Original</label>
+   </div>
+
+   <script>
+      document.querySelectorAll('.design-switcher input').forEach(radio => {
+         radio.addEventListener('change', (e) => {
+            document.body.classList.toggle('typeset-original', e.target.value === 'original');
+         });
+      });
+
+      document.querySelectorAll('.abstract-btn').forEach(btn => {
+         btn.addEventListener('click', () => {
+            const target = document.getElementById(btn.getAttribute('aria-controls'));
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!expanded));
+            target.hidden = expanded;
+         });
+      });
+   </script>
 </body>
 
 </html>
