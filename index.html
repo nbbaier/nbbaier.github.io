@@ -394,18 +394,7 @@
       </section>
    </main>
 
-   <div class="design-switcher" role="radiogroup" aria-label="Typography style">
-      <label><input type="radio" name="typeset" value="revised" checked>Revised</label>
-      <label><input type="radio" name="typeset" value="original">Original</label>
-   </div>
-
    <script>
-      document.querySelectorAll('.design-switcher input').forEach(radio => {
-         radio.addEventListener('change', (e) => {
-            document.body.classList.toggle('typeset-original', e.target.value === 'original');
-         });
-      });
-
       document.querySelectorAll('.abstract-btn').forEach(btn => {
          btn.addEventListener('click', () => {
             const target = document.getElementById(btn.getAttribute('aria-controls'));
