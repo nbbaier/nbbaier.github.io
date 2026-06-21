@@ -1,5 +1,2 @@
-# generated types
 .astro/
-
-# cursor hook state
-.cursor/hooks/state/
+.cursor/hooks/state/continual-learning*
