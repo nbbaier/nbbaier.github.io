@@ -8,16 +8,16 @@
       -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
       "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial,
       sans-serif;
-   --font-primary: "Figtree", var(--font-fallback);
+   --font-primary: "Source Sans 3", "Figtree", var(--font-fallback);
    --font-heading: "Recursive", var(--font-fallback);
    --font-mono:
       "Recursive", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
 
    /* Type scale — 1.25 ratio */
-   --text-sm: 0.875rem; /* 14px — captions, details */
-   --text-base: 1rem; /* 16px — body */
-   --text-md: 1.25rem; /* 20px — section titles */
-   --text-lg: 2rem; /* 32px — page title */
+   --text-sm: 0.9296875rem; /* 14.875px — captions, details */
+   --text-base: 1.0625rem; /* 17px — body */
+   --text-md: 1.328125rem; /* 21.25px — section titles */
+   --text-lg: 2.125rem; /* 34px — page title */
 
    --font-variation-mono-meta: "MONO" 1, "CASL" 0;
 
