@@ -129,7 +129,12 @@ header {
 
 .header-subtitle {
    display: flex;
-   gap: var(--space-meta-gap);
+   flex-wrap: wrap;
+   gap: 0 var(--space-meta-gap);
+}
+
+.header-subtitle > * {
+   white-space: nowrap;
 }
 
 /* Main styles */
@@ -229,6 +234,14 @@ section:last-child::after {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+   .header-subtitle > :first-child {
+      flex-basis: 100%;
+   }
+
+   .header-subtitle > :nth-child(2) {
+      display: none;
+   }
+
    main {
       grid-template-columns: 1fr;
       gap: var(--space-stack-tight);
