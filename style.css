@@ -255,3 +255,14 @@ section:last-child::after {
       margin: var(--space-rule-y-mobile) 0;
    }
 }
+
+/* Very narrow screens — drop separators so the link row fits on one line */
+@media (max-width: 360px) {
+   .header-subtitle {
+      column-gap: 0.75rem;
+   }
+
+   .header-subtitle > :nth-child(even) {
+      display: none;
+   }
+}
