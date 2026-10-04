@@ -13,7 +13,7 @@ Static personal website (nicobaier.com) — plain HTML/CSS, no build system, dep
 
 ## Design Context (summary)
 
-Personal academic/engineering portfolio: visitors scan for credibility, papers, and PDFs (resume/CV). Tone is clear, scholarly, and engineered—warm paper (`#fffffc`), restrained neutrals, grid + hairline rules instead of card chrome. Typography carries identity (Figtree + Recursive; optional “original” typeset via design switcher). Full notes: `.impeccable.md`.
+Personal academic/engineering portfolio: visitors scan for credibility, papers, and PDFs (resume/CV). Tone is clear, scholarly, and engineered—warm paper (`#fffffc`), restrained neutrals, grid + hairline rules instead of card chrome. Typography carries identity (Source Sans 3 + Recursive; optional “original” typeset via design switcher). Full notes: `.impeccable.md`.
 
 <important if="you need to run a dev server or preview the site locally">
 
@@ -43,6 +43,6 @@ bun run index.html
 <important if="you are modifying typography or the design switcher">
 
 - A fixed-position radio group toggles `body.typeset-original` class for alternate typography.
-- Default fonts: Figtree (body), Recursive (headings/mono with variable font settings).
+- Default fonts: Source Sans 3 (body), Recursive (headings/mono with variable font settings).
 - The "original" style overrides CSS custom properties on `body.typeset-original`.
   </important>

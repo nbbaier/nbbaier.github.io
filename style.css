@@ -8,7 +8,7 @@
       -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
       "helvetica neue", helvetica, Cantarell, Ubuntu, roboto, noto, arial,
       sans-serif;
-   --font-primary: "Source Sans 3", "Figtree", var(--font-fallback);
+   --font-primary: "Source Sans 3", var(--font-fallback);
    --font-heading: "Recursive", var(--font-fallback);
    --font-mono:
       "Recursive", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
