@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8" />
    <title>NICO BAIER</title>
@@ -7,7 +8,9 @@
    <meta name="description" content="Nico Baier - Developer and Linguist" />
    <link rel="preconnect" href="https://fonts.googleapis.com" />
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:wght@400;500;600;700&family=Libre+Barcode+128+Text&display=swap" rel="stylesheet">
+   <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Sans:wght@400;500;600;700&family=Libre+Barcode+128+Text&display=swap"
+      rel="stylesheet">
    <style>
       :root {
          --black: #0a0a0a;
@@ -21,9 +24,17 @@
          --font-barcode: 'Libre Barcode 128 Text', cursive;
       }
 
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      *,
+      *::before,
+      *::after {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+      }
 
-      html { font-size: 16px; }
+      html {
+         font-size: 16px;
+      }
 
       body {
          font-family: var(--font-body);
@@ -408,37 +419,50 @@
       }
 
       @keyframes marquee {
-         0% { transform: translateX(0); }
-         100% { transform: translateX(-50%); }
+         0% {
+            transform: translateX(0);
+         }
+
+         100% {
+            transform: translateX(-50%);
+         }
       }
 
       @media (max-width: 768px) {
          .header-title {
             font-size: 3rem;
          }
+
          .main {
             grid-template-columns: 1fr;
          }
+
          .section {
             border-right: none;
          }
+
          .about {
             grid-template-columns: 1fr;
          }
+
          .about-content {
             border-right: none;
             border-bottom: 4px solid var(--black);
          }
+
          .nav {
             flex-wrap: wrap;
          }
+
          .nav-item {
             flex: 1 1 50%;
             border-bottom: 4px solid var(--black);
          }
+
          .links {
             flex-wrap: wrap;
          }
+
          .link-item {
             flex: 1 1 50%;
             border-bottom: 4px solid var(--black);
@@ -446,11 +470,14 @@
       }
    </style>
 </head>
+
 <body>
    <div class="marquee">
       <div class="marquee-inner">
-         DEVELOPER <span>★</span> LINGUIST <span>★</span> CHICAGO <span>★</span> SYNTAX <span>★</span> MORPHOLOGY <span>★</span> TYPESCRIPT <span>★</span> PYTHON <span>★</span>
-         DEVELOPER <span>★</span> LINGUIST <span>★</span> CHICAGO <span>★</span> SYNTAX <span>★</span> MORPHOLOGY <span>★</span> TYPESCRIPT <span>★</span> PYTHON <span>★</span>
+         DEVELOPER <span>★</span> LINGUIST <span>★</span> CHICAGO <span>★</span> SYNTAX <span>★</span> MORPHOLOGY
+         <span>★</span> TYPESCRIPT <span>★</span> PYTHON <span>★</span>
+         DEVELOPER <span>★</span> LINGUIST <span>★</span> CHICAGO <span>★</span> SYNTAX <span>★</span> MORPHOLOGY
+         <span>★</span> TYPESCRIPT <span>★</span> PYTHON <span>★</span>
       </div>
    </div>
 
@@ -549,8 +576,10 @@
       <section class="about" id="about">
          <div class="about-content">
             <h2>About</h2>
-            <p>Chicago-based software engineer with a PhD in Linguistics from UC Berkeley. I build tools and explore the intersection of language and computation.</p>
-            <p>Previously: Postdoc at UBC and McGill. Research in syntax, morphology, and typology. Fieldwork on Seereer, Noon, Karuk, and Montana Salish.</p>
+            <p>Chicago-based software engineer with a PhD in Linguistics from UC Berkeley. I build tools and explore the
+               intersection of language and computation.</p>
+            <p>Previously: Postdoc at UBC and McGill. Research in syntax, morphology, and typology. Fieldwork on
+               Seereer, Noon, Karuk, and Montana Salish.</p>
          </div>
          <div class="about-image">
             <div class="about-stats">
@@ -600,4 +629,5 @@
       <span>All Rights Reserved</span>
    </footer>
 </body>
+
 </html>
